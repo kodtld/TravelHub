@@ -1,29 +1,3 @@
-Ihmettelen minkä takia git log stat näyttäisi niinkuin file1 olisi muutettu file22 ja file2 poistettu?
-#Suoritin muutokset näin:
-kxsalmi@DESKTOP-01ECEPQ:~/ot_viikko1/tiedostoja$ rm file1
-kxsalmi@DESKTOP-01ECEPQ:~/ot_viikko1/tiedostoja$ git rm file1
-rm 'tiedostoja/file1'
-kxsalmi@DESKTOP-01ECEPQ:~/ot_viikko1/tiedostoja$ mv file2 file22
-kxsalmi@DESKTOP-01ECEPQ:~/ot_viikko1/tiedostoja$ git status
-On branch master
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        deleted:    file1
-
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        deleted:    file2
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        file22
-
-
-
-
-#git log --stat käskyn tulostus alla:
-
 commit 43b96514ca0b184f37e8fea7b8e96e45eae30141
 Author: kodtld <kodu@live.fi>
 Date:   Mon Mar 21 20:20:52 2022 +0200
