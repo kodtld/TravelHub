@@ -1,4 +1,4 @@
-#Ihmettelen minkä takia git log stat näyttäisi niinkuin file1 olisi muutettu file22 ja file2 poistettu?
+Ihmettelen minkä takia git log stat näyttäisi niinkuin file1 olisi muutettu file22 ja file2 poistettu?
 #Suoritin muutokset näin:
 kxsalmi@DESKTOP-01ECEPQ:~/ot_viikko1/tiedostoja$ rm file1
 kxsalmi@DESKTOP-01ECEPQ:~/ot_viikko1/tiedostoja$ git rm file1
