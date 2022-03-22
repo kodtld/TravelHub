@@ -4,8 +4,8 @@
 
 ### Viikko1
 
-**Lihava teksti**
+[gitlog.txt](https://github.com/kodtld/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-Normaali teksti
+[komentorivi.txt](https://github.com/kodtld/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-*Italy*
+
