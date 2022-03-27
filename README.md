@@ -8,6 +8,10 @@
 
 [komentorivi.txt](https://github.com/kodtld/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
+### Viikko2
+
+[viikko2 tehtäväkansio](https://github.com/kodtld/ot-harjoitustyo/tree/master/laskarit/viikko2)
+
 [vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
