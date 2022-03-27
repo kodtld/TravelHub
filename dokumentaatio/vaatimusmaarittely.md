@@ -9,7 +9,7 @@ sekä ajankohtaiset tiedot lentojen hinnoista kohteeseen.
 Sovellus koostuu kahdesta näkymästä. Ensimmäisessä näkymässä valitaan matkustuskohde, sekä matkan ajankohta (jos tiedossa).
 Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisiin lähteisiin.
 
-KUVA TÄHÄN
+![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kayttoliittyma_draft.png)
 
 ## Sovelluksen toiminnallisuus
 Sovelluksen tämänhetkinen toiminnallisuus:
