@@ -12,7 +12,7 @@
 
 [viikko2 tehtäväkansio](https://github.com/kodtld/ot-harjoitustyo/tree/master/laskarit/viikko2)
 
-[Coverage 100%](https://github.com/kodtld/ot-harjoitustyo/blob/master/laskarit/viikko2/Coverage%20hundo.png)
+[Coverage 100%](https://github.com/kodtld/ot-harjoitustyo/blob/master/laskarit/viikko2/Unicafe_Coverage.png)
 
 ### Yleiset
 
