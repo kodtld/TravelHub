@@ -1,7 +1,7 @@
 ```mermaid
  classDiagram
       
-      Noppa  <|-- Pelaaja
+      Noppa  --|> Pelaaja
       Ruutu  <|-- Aloitusruutu
       Ruutu  <|-- Vankila
       Ruutu  <|-- Menevankilaan
