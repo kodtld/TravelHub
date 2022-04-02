@@ -4,7 +4,7 @@
       Noppa  <|-- Pelaaja
       Ruutu -- Pelilauta
       Pelaaja -- Pelinappula
-      Pelilauta <.. Pelinappula
+      Ruutu <.. Pelinappula
       Pelilauta : Pelaajien määrä  
       Pelilauta : Ruudut
 
@@ -21,6 +21,11 @@
           Nosta kortti()
           Maksa vankilamaksu()  
       }
+      
+      class Pelinappula{
+          Hahmo
+          Ruutu johon sijoitettu
+      }
 
       class Noppa{
           Heitto(anna numero)
@@ -33,8 +38,5 @@
           Onko kiinteistö
       }
 
-      class Pelinappula{
-          Hahmo
-          Ruutu johon sijoitettu
-      }
+
 ```
