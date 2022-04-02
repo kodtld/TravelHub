@@ -8,7 +8,6 @@
       Ruutu  <|-- SattumaYhteismaa
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
-      Ruutu  <|-- Pelaaja
       Ruutu -- Pelilauta
       Kiinteistö -- Katu
       Pelaaja -- Pelinappula
@@ -67,8 +66,12 @@
       }
 
       class Asema{
+          Nimi
           Onko myyty
-          Omistava pelaaja
+          Ostohinta
+          Vuokran määrä
+          Omistaja
+          Myyntihinta
       }
 
       class Katu{
@@ -82,8 +85,9 @@
           Nimi
           Väri
           Onko myyty
-          Hinta
+          Ostohinta
           Vuokran määrä
           Omistaja
+          Myyntihinta
       }
 ```
