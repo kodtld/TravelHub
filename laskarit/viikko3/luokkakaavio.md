@@ -1,6 +1,6 @@
 ```mermaid
  classDiagram
-      Pelilauta -- Pelaaja
+      
       Noppa  <|-- Pelaaja
       Ruutu  <|-- Menevankilaan
       Ruutu  <|-- Aloitusruutu
@@ -31,7 +31,7 @@
       }
 
       class Pelinappula{
-          Hahmo
+          Hahmo / Pelaaja
           Ruutu johon sijoitettu
       }
 
@@ -53,6 +53,7 @@
       }
       class Vankila{
           Vapautumismaksun hinta
+          Pelaajat vankilassa
       }
       class Aloitusruutu{
           Anna pelaajalle rahaa()
