@@ -3,17 +3,16 @@
       Pelilauta -- Pelaaja
       Noppa  <|-- Pelaaja
       Ruutu -- Pelilauta
-      Pelilauta : +int age
-      Pelilauta : +String gender
-      Pelilauta: +isMammal()
-      Pelilauta: +mate()
+      Pelaaja -- Pelinappula
+      Pelilauta <.. Pelinappula
+      Pelilauta : Pelaajien määrä  
+      Pelilauta : Ruudut
 
       class Pelaaja{
           Pelinappula
           Rahat
           Omistetut kiinteistöt  
           Onko vankilassa
-          Missä ruudussa
           Nopan tulos
           
           Kaupanteko pelaajan kanssa()
@@ -32,5 +31,10 @@
           Seuraava ruutu
           Toiminto
           Onko kiinteistö
+      }
+
+      class Pelinappula{
+          Hahmo
+          Ruutu johon sijoitettu
       }
 ```
