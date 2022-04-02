@@ -1,10 +1,13 @@
 ```mermaid
  classDiagram
-      class Duck{
-          +String beakColor
-          +swim()
-          +quack()
-      }
+      Pelilauta <|-- Pelaaja
+      Pelilauta <|-- Noppa2
+      Noppa1  <|-- Noppa2 
+      Pelilauta : +int age
+      Pelilauta : +String gender
+      Pelilauta: +isMammal()
+      Pelilauta: +mate()
+
       class Pelaaja{
           Pelinappula
           Rahat
