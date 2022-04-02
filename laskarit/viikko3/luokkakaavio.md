@@ -4,6 +4,7 @@
       Noppa  <|-- Pelaaja
       Ruutu  <|-- Menevankilaan
       Ruutu  <|-- Aloitusruutu
+      Ruutu  <|-- Vankila
       Ruutu  <|-- Sattuma
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
