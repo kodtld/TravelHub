@@ -1,13 +1,32 @@
 ```mermaid
  classDiagram
-      Todo "*" --> "1" User
-      class User{
-          username
-          password
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
       }
-      class Todo{
-          id
-          content
-          done
+      class Pelaaja{
+          Pelinappula
+          Rahat
+          Omistetut kiinteistöt  
+          Onko vankilassa
+          Missä ruudussa
+          Nopan tulos
+          
+
+          Kaupanteko pelaajan kanssa()
+          Osta kiinteistö()
+          Maksa vuokra()
+          Nosta kortti()
+          Maksa vankilamaksu()  
+
       }
+      class Noppa1{
+          Heitto(anna numero)
+      }
+
+      class Noppa2{
+          Heitto(anna numero)
+      }
+
 ```
