@@ -8,7 +8,7 @@
       Ruutu  <|-- SattumaYhteismaa
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
-      Pelilauta -- Ruutu
+      Pelilauta "1" -- "*" Ruutu
       Katu -- Kiinteistö
       Pelaaja "1" -- "*" Kiinteistö
       Pelaaja "1" -- "*" Asema
@@ -17,6 +17,9 @@
       SattumaYhteismaa -- Sattumakortti 
 
       Pelilauta : Pelaajien määrä  
+      Pelilauta : Kenen pelaajan vuoro
+      Pelilauta : Rahaa pankissa
+      Pelilauta : Anna rahaa pankista()
 
       class Pelaaja{
           Pelinappula
