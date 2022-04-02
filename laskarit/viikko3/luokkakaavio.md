@@ -9,10 +9,10 @@
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
       Pelilauta -- Ruutu
-      Kiinteistö -- Katu
+      Katu -- Kiinteistö
       Pelaaja -- Pelinappula
       Ruutu <.. Pelinappula
-      Sattumakortti -- SattumaYhteismaa  
+      SattumaYhteismaa -- Sattumakortti 
 
       Pelilauta : Pelaajien määrä  
 
