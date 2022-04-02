@@ -6,15 +6,16 @@
       Ruutu  <|-- Vankila
       Ruutu  <|-- Menevankilaan
       Ruutu  <|-- SattumaYhteismaa
+      SattumaYhteismaa -- Sattumakortti 
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
-      Pelilauta "1" -- "*" Ruutu
       Katu -- Kiinteistö
+      Pelilauta "1" -- "*" Ruutu
       Pelaaja "1" -- "*" Kiinteistö
       Pelaaja "1" -- "*" Asema
       Pelinappula -- Pelaaja
       Ruutu <.. Pelinappula
-      SattumaYhteismaa -- Sattumakortti 
+      
 
       Pelilauta : Pelaajien määrä  
       Pelilauta : Kenen pelaajan vuoro
