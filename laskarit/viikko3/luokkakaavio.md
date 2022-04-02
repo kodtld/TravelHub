@@ -5,17 +5,17 @@
       Ruutu  <|-- Menevankilaan
       Ruutu  <|-- Aloitusruutu
       Ruutu  <|-- Vankila
-      Ruutu  <|-- Sattuma
+      Ruutu  <|-- Sattuma/Yhteismaa
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
       Ruutu  <|-- Pelaaja
       Ruutu -- Pelilauta
+      Kiinteistö -- Katu
       Pelaaja -- Pelinappula
       Ruutu <.. Pelinappula
       Sattumakortti -- Sattuma  
 
-      Pelilauta : Pelaajien määrä
-
+      Pelilauta : Pelaajien määrä  
 
       class Pelaaja{
           Pelinappula
@@ -58,7 +58,7 @@
       class Aloitusruutu{
           Anna pelaajalle rahaa()
       }
-      class Sattuma{
+      class Sattuma/Yhteismaa{
           Anna kortti()
       }
 
@@ -72,7 +72,18 @@
       }
 
       class Katu{
+          Kadunnimi
+          Kadun väri
           Kiinteistöt kadulla
           Kiinteistön omistaja
+      }
+
+      class Kiinteistö{
+          Nimi
+          Väri
+          Onko myyty
+          Hinta
+          Vuokran määrä
+          Omistaja
       }
 ```
