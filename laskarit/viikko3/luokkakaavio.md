@@ -8,7 +8,7 @@
       Ruutu  <|-- SattumaYhteismaa
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
-      Ruutu -- Pelilauta
+      Pelilauta -- Ruutu
       Kiinteistö -- Katu
       Pelaaja -- Pelinappula
       Ruutu <.. Pelinappula
