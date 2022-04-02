@@ -11,8 +11,10 @@
       Ruutu -- Pelilauta
       Pelaaja -- Pelinappula
       Ruutu <.. Pelinappula
-      Pelilauta : Pelaajien määrä  
-      Pelilauta : Ruudut
+      Sattumakortti -- Sattuma  
+
+      Pelilauta : Pelaajien määrä
+
 
       class Pelaaja{
           Pelinappula
@@ -50,20 +52,26 @@
           Lähetä pelaaja vankilaan()
       }
       class Vankila{
-          Lähetä pelaaja vankilaan()
+          Vapautumismaksun hinta
       }
       class Aloitusruutu{
-          Lähetä pelaaja vankilaan()
+          Anna pelaajalle rahaa()
       }
       class Sattuma{
-          Lähetä pelaaja vankilaan()
+          Anna kortti()
+      }
+
+      class Sattumakortti{
+          Sattuma
       }
 
       class Asema{
-          Lähetä pelaaja vankilaan()
+          Onko myyty
+          Omistava pelaaja
       }
 
       class Katu{
-          Lähetä pelaaja vankilaan()
+          Kiinteistöt kadulla
+          Kiinteistön omistaja
       }
 ```
