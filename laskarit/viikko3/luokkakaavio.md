@@ -13,7 +13,7 @@
       Kiinteistö -- Katu
       Pelaaja -- Pelinappula
       Ruutu <.. Pelinappula
-      Sattumakortti -- Sattuma  
+      Sattumakortti -- SattumaYhteismaa  
 
       Pelilauta : Pelaajien määrä  
 
