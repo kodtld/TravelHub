@@ -2,6 +2,12 @@
  classDiagram
       Pelilauta -- Pelaaja
       Noppa  <|-- Pelaaja
+      Ruutu  <|-- Menevankilaan
+      Ruutu  <|-- Aloitusruutu
+      Ruutu  <|-- Sattuma
+      Ruutu  <|-- Asema
+      Ruutu  <|-- Katu
+      Ruutu  <|-- Pelaaja
       Ruutu -- Pelilauta
       Pelaaja -- Pelinappula
       Ruutu <.. Pelinappula
@@ -21,7 +27,7 @@
           Nosta kortti()
           Maksa vankilamaksu()  
       }
-      
+
       class Pelinappula{
           Hahmo
           Ruutu johon sijoitettu
@@ -34,9 +40,30 @@
       class Ruutu{
           Nimi
           Seuraava ruutu
-          Toiminto
           Onko kiinteistö
+          Onko vapaa
+          Sijainti laudalla
+          Toiminto
       }
 
+      class Menevankilaan{
+          Lähetä pelaaja vankilaan()
+      }
+      class Vankila{
+          Lähetä pelaaja vankilaan()
+      }
+      class Aloitusruutu{
+          Lähetä pelaaja vankilaan()
+      }
+      class Sattuma{
+          Lähetä pelaaja vankilaan()
+      }
 
+      class Asema{
+          Lähetä pelaaja vankilaan()
+      }
+
+      class Katu{
+          Lähetä pelaaja vankilaan()
+      }
 ```
