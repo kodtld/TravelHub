@@ -2,9 +2,9 @@
  classDiagram
       
       Noppa  <|-- Pelaaja
-      Ruutu  <|-- Menevankilaan
       Ruutu  <|-- Aloitusruutu
       Ruutu  <|-- Vankila
+      Ruutu  <|-- Menevankilaan
       Ruutu  <|-- SattumaYhteismaa
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
