@@ -1,7 +1,8 @@
 ```mermaid
  classDiagram
-      Pelilauta <|-- Pelaaja
-      Pelaaja  <|-- Noppa 
+      Pelilauta -- Pelaaja
+      Noppa  <|-- Pelaaja
+      Ruutu -- Pelilauta
       Pelilauta : +int age
       Pelilauta : +String gender
       Pelilauta: +isMammal()
@@ -15,16 +16,21 @@
           Missä ruudussa
           Nopan tulos
           
-
           Kaupanteko pelaajan kanssa()
           Osta kiinteistö()
           Maksa vuokra()
           Nosta kortti()
           Maksa vankilamaksu()  
-
       }
+
       class Noppa{
           Heitto(anna numero)
       }
 
+      class Ruutu{
+          Nimi
+          Seuraava ruutu
+          Toiminto
+          Onko kiinteistö
+      }
 ```
