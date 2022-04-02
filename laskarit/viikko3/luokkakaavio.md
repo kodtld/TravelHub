@@ -5,7 +5,7 @@
       Ruutu  <|-- Menevankilaan
       Ruutu  <|-- Aloitusruutu
       Ruutu  <|-- Vankila
-      Ruutu  <|-- Sattuma/Yhteismaa
+      Ruutu  <|-- Sattuma(tai)Yhteismaa
       Ruutu  <|-- Asema
       Ruutu  <|-- Katu
       Ruutu  <|-- Pelaaja
@@ -58,7 +58,7 @@
       class Aloitusruutu{
           Anna pelaajalle rahaa()
       }
-      class Sattuma/Yhteismaa{
+      class Sattuma(tai)Yhteismaa{
           Anna kortti()
       }
 
