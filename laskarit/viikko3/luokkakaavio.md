@@ -10,6 +10,8 @@
       Ruutu  <|-- Katu
       Pelilauta -- Ruutu
       Katu -- Kiinteistö
+      Pelaaja "1" -- "*" Kiinteistö
+      Pelaaja "1" -- "*" Asema
       Pelaaja -- Pelinappula
       Ruutu <.. Pelinappula
       SattumaYhteismaa -- Sattumakortti 
