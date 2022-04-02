@@ -1,8 +1,7 @@
 ```mermaid
  classDiagram
       Pelilauta <|-- Pelaaja
-      Pelilauta <|-- Noppa2
-      Noppa1  <|-- Noppa2 
+      Pelaaja  <|-- Noppa 
       Pelilauta : +int age
       Pelilauta : +String gender
       Pelilauta: +isMammal()
@@ -24,11 +23,7 @@
           Maksa vankilamaksu()  
 
       }
-      class Noppa1{
-          Heitto(anna numero)
-      }
-
-      class Noppa2{
+      class Noppa{
           Heitto(anna numero)
       }
 
