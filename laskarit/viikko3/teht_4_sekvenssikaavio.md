@@ -10,7 +10,5 @@
      main->>lippu_luukku: Kioski()
      main->>kallen_kortti: lippu_luukku.osta_matkakortti("Kalle")
      kallen_kortti->>lippu_luukku: lippu_luukku.osta_matkakortti("Kalle")
-     
-
-
+     lippu_luukku->>uusi_kortti: Matkakortti("kalle")
 ```
