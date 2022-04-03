@@ -4,4 +4,4 @@
      activate John
      John-->>Alice: Great!
      deactivate John
-```mermaid
+```
