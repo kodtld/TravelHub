@@ -8,5 +8,9 @@
      main->>laitehallinto: laitehallinto.lisaa_lukija(ratikka6)
      main->>laitehallinto: laitehallinto.lisaa_lukija(bussi244)
      main->>lippu_luukku: Kioski()
+     main->>kallen_kortti: lippu_luukku.osta_matkakortti("Kalle")
+     kallen_kortti->>lippu_luukku: lippu_luukku.osta_matkakortti("Kalle")
+     
+
 
 ```
