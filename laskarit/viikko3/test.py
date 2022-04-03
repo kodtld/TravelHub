@@ -1,38 +1,87 @@
-class Machine:
+class Kioski:
+    def osta_matkakortti(self, nimi, arvo = None):
+        uusi_kortti = Matkakortti(nimi)
+
+        if arvo:
+            uusi_kortti.kasvata_arvoa(arvo)
+
+        return uusi_kortti
+
+class Matkakortti:
+    def __init__(self, omistaja):
+        self.omistaja = omistaja
+        self.pvm = 0
+        self.kk = 0
+        self.arvo = 0
+
+    def kasvata_arvoa(self, maara):
+        self.arvo += maara
+
+    def vahenna_arvoa(self, maara):
+        self.arvo -= maara
+
+    def uusi_aika(self, pvm, kk):
+        self.pvm = pvm
+        self.kk = kk
+
+class Lataajalaite:
+    def lataa_arvoa(self, kortti, maara):
+        kortti.kasvata_arvoa(maara)
+
+    def lataa_aikaa(self, kortti, pvm, kk):
+        kortti.uusi_aika(pvm, kk)
+
+RATIKKA = 1.5
+HKL = 2.1
+SEUTU = 3.5
+
+class Lukijalaite:
+    def osta_lippu(self, kortti, tyyppi):
+        hinta = 0
+
+        if tyyppi == 0:
+            hinta = RATIKKA
+        elif tyyppi == 1:
+            hinta = HKL
+        else:
+            hinta = SEUTU
+
+        if kortti.arvo < hinta:
+            return False
+
+        kortti.vahenna_arvoa(hinta)
+
+        return True
+
+class HKLLaitehallinto:
     def __init__(self):
-        self._tank = FuelTank()
-        self._tank.fill(40)
-        self._engine = Engine(self._tank)
+        self._lataajat = []
+        self._lukijat = []
 
-    def drive(self):
-        self._engine.start()
-        running = self._engine.is_running()
+    def lisaa_lataaja(self, lataaja):
+        self._lataajat.append(lataaja)
 
-        if running:
-          self._engine.use_energy()
+    def lisaa_lukija(self, lukija):
+        self._lukijat.append(lukija)
 
-class FuelTank:
-    def __init__(self):
-        self.fuel_contents = 0
+def main():
+    laitehallinto = HKLLaitehallinto()
 
-    def fill(self, amount):
-        self.fuel_contents = amount
+    rautatietori = Lataajalaite()
+    ratikka6 = Lukijalaite()
+    bussi244 = Lukijalaite()
 
-    def consume(self, amount):
-        self.fuel_contents = self.fuel_contents - amount
+    laitehallinto.lisaa_lataaja(rautatietori)
+    laitehallinto.lisaa_lukija(ratikka6)
+    laitehallinto.lisaa_lukija(bussi244)
 
-class Engine:
-    def __init__(self, tank):
-        self._fuel_tank = tank
+    lippu_luukku = Kioski()
+    kallen_kortti = lippu_luukku.osta_matkakortti("Kalle")
 
-    def start(self):
-        self._fuel_tank.consume(5)
+    rautatietori.lataa_arvoa(kallen_kortti, 3)
 
-    def is_running(self):
-        return self._fuel_tank.fuel_contents > 0
-
-    def use_energy(self):
-        self._fuel_tank.consume(10)
+    ratikka6.osta_lippu(kallen_kortti, 0)
+    bussi244.osta_lippu(kallen_kortti, 2)
 
 if __name__ == "__main__":
-    m = Machine()
+    main()
