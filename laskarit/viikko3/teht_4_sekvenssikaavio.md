@@ -1,10 +1,10 @@
 ```mermaid
  sequenceDiagram
      main->>laitehallinto: HKLLaitehallinto()
-     main->>rautatietori : Lataajalaite()
+     main->>rautatientori : Lataajalaite()
      main->>ratikka6 : Lukijalaite()
      main->>bussi244 : Lukijalaite()
-     main->>laitehallinto: laitehallinto.lisaa_lataaja(rautatietori)
+     main->>laitehallinto: laitehallinto.lisaa_lataaja(rautatientori)
      main->>laitehallinto: laitehallinto.lisaa_lukija(ratikka6)
      main->>laitehallinto: laitehallinto.lisaa_lukija(bussi244)
      main->>lippu_luukku: Kioski()
@@ -12,7 +12,7 @@
      kallen_kortti->>lippu_luukku: lippu_luukku.osta_matkakortti("Kalle")
      lippu_luukku->>uusi_kortti: Matkakortti("kalle")
      uusi_kortti->>lippuluukku: self.arvo = 0
-     main->>rautatietori : rautatietori.lataa_arvoa(kallen_kortti, 3)
+     main->>rautatientori : rautatientori.lataa_arvoa(kallen_kortti, 3)
      rautatientori->>kallen_kortti: def kasvata_arvoa(self, 3)
 
 ```
