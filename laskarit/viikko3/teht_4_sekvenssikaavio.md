@@ -11,4 +11,8 @@
      main->>kallen_kortti: lippu_luukku.osta_matkakortti("Kalle")
      kallen_kortti->>lippu_luukku: lippu_luukku.osta_matkakortti("Kalle")
      lippu_luukku->>uusi_kortti: Matkakortti("kalle")
+     uusi_kortti->>lippuluukku: self.arvo = 0
+     main->>rautatietori : rautatietori.lataa_arvoa(kallen_kortti, 3)
+     rautatientori->>kallen_kortti: def kasvata_arvoa(self, 3)
+
 ```
