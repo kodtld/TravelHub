@@ -1,6 +1,6 @@
 ```mermaid
  sequenceDiagram
-     Main->>m: m = Machine()
+     Main->>m: Machine()
      m->>FuelTank: fuel_contents_0
      m->>FuelTank: self.tank.fill(40)
      m->>Engine: Engine(self.tank)
