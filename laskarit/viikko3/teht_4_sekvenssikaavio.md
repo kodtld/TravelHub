@@ -15,8 +15,10 @@
      main->>rautatientori : rautatientori.lataa_arvoa(kallen_kortti, 3)
      rautatientori->>kallen_kortti: kasvata_arvoa(self, 3)
      main->>ratikka6: ratikka6.osta_lippu(kallen_kortti, 0)
+     kallen_kortti->>ratikka6: arvo 3
      ratikka6->>kallen_kortti: vahenna_arvoa(self, 1,5)
      main->>bussi244: bussi244.osta_lippu(kallen_kortti, 2)
-     kallen_kortti->>bussi244: return False
+     kallen_kortti->>bussi244: arvo 1.5
+     bussi244->>main: return False
 
 ```
