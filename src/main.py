@@ -1,5 +1,6 @@
-from cProfile import label
 from tkinter import *
+import tkinter
+
 import requests
 from requests.api import request
 from urllib.request import urlopen
