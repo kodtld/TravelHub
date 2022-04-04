@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter
+
 import requests
 from requests.api import request
 from urllib.request import urlopen
@@ -37,11 +38,12 @@ hp = Entry(root,bg="white",font="helvetica",justify=CENTER)
 hp.insert(END,"Type in your destination...")
 hp.place(relx = 0.3, rely = 0.5, relwidth = 0.4, relheight = 0.1)
 
-
 # Home Screen Button
 take_button = Button(root, bg="#00BAFF", activebackground="#7EDCFF", text= "Take me there!", font="helvetica", fg="white", activeforeground="white",command= lambda: get_GeoCode(hp.get()))
 take_button.place(relx = 0.3, rely = 0.63, relwidth = 0.4, relheight = 0.1)
 
-
+# Main frame
+main_frame = Frame(root)
+#main_frame.place(relx = 0, rely = 0, relwidth = 1, relheight = 1)
 
 root.mainloop()
