@@ -24,9 +24,14 @@ def get_GeoCode(hp):
         Lat = got_geocode[0]['lat']
         Lon = got_geocode[0]['lon']
 
+        er = Label(root,text="Working...",font="helvetica")
+        er.place(relx = 0.3, rely = 0.75, relwidth = 0.4, relheight = 0.1)
+
         return f"City: {city_name}, Latitude: {Lat}, Longitude: {Lon}"
 
     except:
+        er = Label(root,text="Please enter valid destination...",font="helvetica")
+        er.place(relx = 0.3, rely = 0.75, relwidth = 0.4, relheight = 0.1)
         return "Please enter valid destination..."
 
 # Set Home Screen Background Image
