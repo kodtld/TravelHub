@@ -36,3 +36,4 @@ poetry run invoke test
 ```bash
 poetry run invoke coverage-report
 ```
+Raportti löytyy htmlcov-hakemistosta.
