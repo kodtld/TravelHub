@@ -18,14 +18,15 @@ def get_GeoCode(hp):
     got_geocode = request_geo.json()
     
     try:
+        city_name = got_geocode[0]['name']
+        country = got_geocode[0]['country']
         Lat = got_geocode[0]['lat']
         Lon = got_geocode[0]['lon']
 
-        print(f"Latitude: {Lat}, Longitude: {Lon}")
+        return f"City: {city_name}, Latitude: {Lat}, Longitude: {Lon}"
 
     except:
-        print("Please enter a valid destination...")
-
+        return "Please enter valid destination..."
 
 # Set Home Screen Background Image
 bgimage = PhotoImage(file = "BGimagesmarrel.png")
