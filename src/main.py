@@ -30,9 +30,9 @@ def get_GeoCode(hp):
         return "Please enter valid destination..."
 
 # Set Home Screen Background Image
-bgimage = PhotoImage(file = "BGimagesmarrel.png")
-bg_label = Label(root,image = bgimage)
-bg_label.place(x=0,y=0,relwidth=1, relheight=1)
+#bgimage = PhotoImage(file = "BGimagesmarrel.png")
+#bg_label = Label(root,image = bgimage)
+#bg_label.place(x=0,y=0,relwidth=1, relheight=1)
 
 # Home Screen Entry Box
 hp = Entry(root,bg="white",font="helvetica",justify=CENTER)
