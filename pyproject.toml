@@ -8,6 +8,8 @@ authors = ["kodtld <kodu@live.fi>"]
 python = "^3.8"
 invoke = "^1.7.0"
 requests = "^2.27.1"
+DateTime = "^4.4"
+image = "^1.5.33"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.1"
