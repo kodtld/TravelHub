@@ -28,9 +28,10 @@ class HomeFrame(tk.Frame):
         home_entry.place(relx=0.3, rely=0.5, relwidth=0.4, relheight=0.1)
 
         # Home Screen Button
-        take_button = tk.Button(root, bg="#00BAFF", activebackground="#7EDCFF", text="Take me there!",
-                             font="helvetica", fg="white", activeforeground="white",
-                             command=lambda: self.get_geo_code(home_entry.get()))
+        take_button = tk.Button(root, bg="#00BAFF",
+         activebackground="#7EDCFF", text="Take me there!",
+         font="helvetica", fg="white", activeforeground="white",
+         command=lambda: self.get_geo_code(home_entry.get()))
         take_button.place(relx=0.3, rely=0.63, relwidth=0.4, relheight=0.1)
 
     def get_geo_code(self, home_entry):
@@ -73,11 +74,13 @@ class MainFrame():
             got_weather['daily'][0]['dt']).strftime('%d-%m')
 
         current_weather_day_text = tk.Label(
-            current_box, text=f"Daily average: {current_weather_day}°C", font=("helvetica", 13), bg="lightblue")
+            current_box, text=f"Daily average: {current_weather_day}°C",
+             font=("helvetica", 13), bg="lightblue")
         current_weather_min_text = tk.Label(
-            current_box, text=f"Daily min.: {current_weather_min}°C", font=("helvetica", 13), bg="lightblue")
-        current_date_text = tk.Label(current_box, text=f"Date: {current_date}", font=(
-            "helvetica", 13), bg="lightblue")
+            current_box, text=f"Daily min.: {current_weather_min}°C",
+             font=("helvetica", 13), bg="lightblue")
+        current_date_text = tk.Label(current_box, text=f"Date: {current_date}",
+         font=("helvetica", 13), bg="lightblue")
 
         current_weather_day_text.place(rely=0.55, relheight=0.15, relwidth=1)
         current_weather_min_text.place(rely=0.7, relheight=0.15, relwidth=1)
@@ -169,9 +172,11 @@ class MainFrame():
             got_weather['daily'][3]['dt']).strftime('%d-%m')
 
         three_weather_day_text = tk.Label(
-            three_box, text=f"Daily average: {three_weather_day}°C", font=("helvetica", 13), bg="lightblue")
+            three_box, text=f"Daily average: {three_weather_day}°C",
+             font=("helvetica", 13), bg="lightblue")
         three_weather_min_text = tk.Label(
-            three_box, text=f"Daily min.: {three_weather_min}°C", font=("helvetica", 13), bg="lightblue")
+            three_box, text=f"Daily min.: {three_weather_min}°C",
+             font=("helvetica", 13), bg="lightblue")
         three_date_text = tk.Label(three_box, text=f"Date: {three_date}", font=(
             "helvetica", 13), bg="lightblue")
 
@@ -200,13 +205,13 @@ class MainFrame():
         four_date = datetime.datetime.utcfromtimestamp(
             got_weather['daily'][4]['dt']).strftime('%d-%m')
 
-        four_weather_day_text = tk.Label(four_box, 
-            text=f"Daily average: {four_weather_day}°C", 
+        four_weather_day_text = tk.Label(four_box,
+            text=f"Daily average: {four_weather_day}°C",
             font=("helvetica", 13), bg="lightblue")
-        four_weather_min_text = tk.Label(four_box, text=f"Daily min.: {four_weather_min}°C", font=(
-            "helvetica", 13), bg="lightblue")
-        four_date_text = tk.Label(four_box, text=f"Date: {four_date}", font=(
-            "helvetica", 13), bg="lightblue")
+        four_weather_min_text = tk.Label(four_box, text=f"Daily min.: {four_weather_min}°C",
+         font=("helvetica", 13), bg="lightblue")
+        four_date_text = tk.Label(four_box, text=f"Date: {four_date}",
+         font=("helvetica", 13), bg="lightblue")
 
         four_weather_day_text.place(rely=0.55, relheight=0.15, relwidth=1)
         four_weather_min_text.place(rely=0.7, relheight=0.15, relwidth=1)
