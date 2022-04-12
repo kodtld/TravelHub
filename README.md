@@ -39,3 +39,10 @@ poetry run invoke test
 poetry run invoke coverage-report
 ```
 Raportti löytyy htmlcov-hakemistosta.
+
+### Pylint testaus
+
+Pylint testauksen voi ajaa komennolla:
+```bash
+poetry run invoke lint
+```
