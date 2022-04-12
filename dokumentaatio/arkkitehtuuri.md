@@ -10,8 +10,8 @@
       class MainFrame{
   	  Syötekaupungin nimi
           GetGeoCode kutsun palauttamat kaupungit koordinaatit  
-          GetWeather() *Hakee kaupungin sään koordinaattien perusteella
-	  Tulevaisuus() *Tulevaisuudessa kutsuu muita funktioita/luokkia syötekaupungin nimellä
+          GetWeather() Hakee kaupungin sään koordinaattien perusteella
+	  Tulevaisuus() Tulevaisuudessa kutsuu muita funktioita/luokkia syötekaupungin nimellä
           }
 
 ```
