@@ -11,3 +11,4 @@
 - Kotinäyttö siirretty luokkaan HomeFrame ja päänäyttö rakennettu luokkaan MainFrame
 - Sovelluslogiikan ja UI:n jakaminen erillisiin tiedostoihin on osoittautunut erittäin haasteellisesksi joten toistaiseksi sovellus on edelleen kokonaisuudessaan main.py tiedostossa (korjataan mahdollisimman pian)
 - Epävalidille syötteelle lisätty visuaalinen feedback
+- Pylint otettu käyttöön
