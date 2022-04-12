@@ -9,6 +9,8 @@ Sovellus tarjoaa katsauksen käyttäjän valitsemaan matkustuskohteeseen. Tämä
 
 [changelog](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
+[arkkitehtuuri](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Komentorivi
 
 ### Asennus
