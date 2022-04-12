@@ -10,9 +10,9 @@
       class MainFrame{
   	  Syötekaupungin nimi
           GetGeoCode kutsun palauttamat kaupungit koordinaatit  
-          GetWeather() Hakee kaupungin sään koordinaattien perusteella
-	  Tulevaisuus() Tulevaisuudessa kutsuu muita funktioita/luokkia syötekaupungin nimellä
-          }
+          GetWeather(Hakee kaupungin sään koordinaattien perusteella) 
+	  Tulevaisuus(Tulevaisuudessa kutsuu muita funktioita/luokkia syötekaupungin nimellä) 
+         }
 
 ```
 Luokkakaavio toistaiseksi, ohjelmaa ei ole vielä jaettu erillisiin tiedostoihin joten luokkien nimet ja väliset suhteet tulevat varmasti kokemaan muutoksia sovelluksen edetessä.
