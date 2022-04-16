@@ -10,4 +10,8 @@
 | 9.3 |  1   | Tkinter UI:n asettelua yms. |
 | 11.3 |  1   | Weather API:n sää-ikonien käyttöönotto |
 | 12.3 |  4   | Sovelluksen jakamista eri tiedostoihin ja käyttöliittymän erottelu, toistaiseksi epäonnistuneesti |
-| Yht. |  16.5  |    |
+| 14.3 |  4   | Sovelluksen hajauttaminen eri tiedostoihin |
+| 15.3 |  3   | News API:n käyttöönotto ja lisääminen sovellukseen |
+| 15.3 |  0.5   | UI:n asettelua |
+| 16.3 |  1   | Uuden rakenteen siirtäminen GitHubiin ja koodin pylint siistiminen |
+| Yht. |  25  |    |
