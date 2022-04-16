@@ -12,3 +12,12 @@
 - Sovelluslogiikan ja UI:n jakaminen erillisiin tiedostoihin on osoittautunut erittäin haasteellisesksi joten toistaiseksi sovellus on edelleen kokonaisuudessaan main.py tiedostossa (korjataan mahdollisimman pian)
 - Epävalidille syötteelle lisätty visuaalinen feedback
 - Pylint otettu käyttöön
+
+## Viikko 5
+
+- Lisätty News_Api joka hakee kohteen uutiset, ja näyttää ne käyttäjälle
+- Ohjelma toiminta hajautettu erillisiin tiedostoihin
+- Sovelluksen rakenne muuttunut huomattavasti:
+- UI elementit "ui" kansiossa
+- Sovelluslogiikka "logic" kansiossa
+- API kutsujen formatointi/järjestys "api_format" kansiossa
