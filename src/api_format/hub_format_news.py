@@ -4,8 +4,6 @@ from urllib.request import urlopen
 from PIL import ImageTk, Image
 import webbrowser
 
-from matplotlib import image
-
 class FormatNews:
     def __init__(self,root) -> None:
         self.root = root
