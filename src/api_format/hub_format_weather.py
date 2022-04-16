@@ -50,10 +50,12 @@ class FormatWeather:
         one_weather_min = got_weather['daily'][1]['temp']['min']
         one_date = datetime.datetime.utcfromtimestamp(
             got_weather['daily'][1]['dt']).strftime('%d-%m')
-        one_weather_day_text = tk.Label(self.one_box, text=f"Daily average: {one_weather_day}°C", font=(
-            "helvetica", 13), bg="lightblue")
-        one_weather_min_text = tk.Label(self.one_box, text=f"Daily min.: {one_weather_min}°C", font=(
-            "helvetica", 13), bg="lightblue")
+        one_weather_day_text = tk.Label(self.one_box,
+         text=f"Daily average: {one_weather_day}°C",
+         font=("helvetica", 13), bg="lightblue")
+        one_weather_min_text = tk.Label(self.one_box,
+         text=f"Daily min.: {one_weather_min}°C",
+         font=("helvetica", 13), bg="lightblue")
         one_date_text = tk.Label(self.one_box, text=f"Date: {one_date}", font=(
             "helvetica", 13), bg="lightblue")
         one_weather_day_text.place(rely=0.55, relheight=0.15, relwidth=1)
@@ -79,10 +81,12 @@ class FormatWeather:
         two_weather_min = got_weather['daily'][2]['temp']['min']
         two_date = datetime.datetime.utcfromtimestamp(
             got_weather['daily'][2]['dt']).strftime('%d-%m')
-        two_weather_day_text = tk.Label(self.two_box, text=f"Daily average: {two_weather_day}°C", font=(
-            "helvetica", 13), bg="lightblue")
-        two_weather_min_text = tk.Label(self.two_box, text=f"Daily min.: {two_weather_min}°C", font=(
-            "helvetica", 13), bg="lightblue")
+        two_weather_day_text = tk.Label(self.two_box,
+         text=f"Daily average: {two_weather_day}°C",
+         font=("helvetica", 13), bg="lightblue")
+        two_weather_min_text = tk.Label(self.two_box,
+         text=f"Daily min.: {two_weather_min}°C",
+         font=("helvetica", 13), bg="lightblue")
         two_date_text = tk.Label(self.two_box, text=f"Date: {two_date}", font=(
             "helvetica", 13), bg="lightblue")
         two_weather_day_text.place(rely=0.55, relheight=0.15, relwidth=1)

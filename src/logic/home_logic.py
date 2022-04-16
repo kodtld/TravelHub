@@ -1,5 +1,6 @@
-from ui.hub_ui import HubUI
 import requests
+from ui.hub_ui import HubUI
+
 class HomeLogic:
     def __init__(self,root):
         self.root = root
@@ -18,9 +19,6 @@ class HomeLogic:
             lat = got_geocode[0]['lat']
             lon = got_geocode[0]['lon']
             self.hub_ui.load_hub_ui(lat, lon, city_name,country)
-            
+
         except:
             home_ui.place_valid()
-
-
-    
