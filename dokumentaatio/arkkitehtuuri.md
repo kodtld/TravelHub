@@ -6,6 +6,7 @@
       HomeUI <|-- HomeLogic
       HomeLogic <|-- HubUI
       HubUI <|-- HubLogic
+      HubUI ..	HomeUI
       HubLogic <|-- FormatWeather
       HubLogic <|-- FormatNews
 
