@@ -2,7 +2,7 @@
  classDiagram
       
       Index  -- MainFrame
-      MainFrame -- HomeUI
+      MainFrame <|-- HomeUI
       HomeUI <|-- HomeLogic
       HomeLogic <|-- HubUI
       HubUI <|-- HubLogic
@@ -18,44 +18,47 @@
          }
 
       class HomeUI{
+           tk.root
   	  Init home_ui()
          Place home_ui()
          call_get_geo_code(from home_logic, pass root)
          }
 
       class HomeLogic{
-           root
+           home_root
   	     get_geo_code(turns homeUI entry into latitude and logitude code)
             call_load_hub_UI()
           
          }
 
       class HubUI{
-           root
+           tk.root
            cityname
            country
            latitude
            longitude
 
-  	     load_hub_UI()
+  	     load_hub_UI(hub_root)
             call_get_weather(root,lat,long)
             call_get_news(root,cityname)
+            call_return_to_home_ui(from hub_logic)
           
          }
 
       class HubLogic{
-           root
+           hub_root
 
           get_weather(root,lat,long)
   	     get_news(root,cityname)
             
             call_format_weather(root,got_weather)
             call_format_news(root,got_news)
+            return_to_home_ui()
           
          }
 
       class FormatWeather{
-           root
+           hub_root
            got_weather
 
           format_weather_from_lat_lon()
@@ -64,7 +67,7 @@
          }
 
       class FormatNews{
-           root
+           hub_root
            got_news
 
           format_news_from_city()
@@ -73,5 +76,3 @@
          }
 
 ```
-Luokkakaavio toistaiseksi, ohjelmaa ei ole vielä jaettu erillisiin tiedostoihin joten luokkien nimet ja väliset suhteet tulevat varmasti kokemaan muutoksia sovelluksen edetessä.
-Ideana on kuitenkin se että GetGeoCode funktion syötettä "kannetaan" mukana eri funktioiden välillä joita kutsutaan syötteellä.
