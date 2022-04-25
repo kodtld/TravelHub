@@ -22,11 +22,11 @@ class FormatCurrency:
         self.currency_scale.place(relx=0,rely=0.5,relheight=0.5,relwidth=1)
         self.scale_text.place(relx=0.0125,rely=0.6,relheight=0.3,relwidth=0.3)
 
-        info_text = tk.Label(self.currency_text,bg="lightblue",text=f"The official currency of {country} is: {currency_name}",font=("helvetica",15))
+        info_text = tk.Label(self.currency_text,bg="lightblue",text=f"The official currency of {country} is: {currency_name}",font=("helvetica",18))
         info_text.place(relheight=1,relwidth=1,relx=0,rely=0)
 
         ratesum = "{:.2f}".format(ratesum)
-        ratesum_text = tk.Label(self.ratesum_text,bg="lightblue",text=f"For {amount} Euro's, you'll get {ratesum} {currency_name}'s",font=("helvetica",15))
+        ratesum_text = tk.Label(self.ratesum_text,bg="lightblue",text=f"For {amount} Euro's, you'll get {ratesum} {currency_name}'s",font=("helvetica",18))
         ratesum_text.place(relheight=1,relwidth=1,relx=0,rely=0)
 
         currency_button = tk.Button(self.currency_scale,bg="darkblue",text="Exchange",font=("helvetica",15),fg="white",command=lambda:self.hub_logic.get_currency(root,self.amount2,country,currency_name,currency_code))

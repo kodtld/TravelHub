@@ -9,6 +9,7 @@ from ui.home_ui import HomeUI
 from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
 from api_format.hub_format_currency import FormatCurrency
+from api_format.hub_format_attractions import FormatAttractions
 
 class HubLogic:
     def __init__(self,root):
@@ -49,7 +50,6 @@ class HubLogic:
             ratesum = amount*rate
             format_currency = FormatCurrency(root)
             format_currency.format_all(root,country,currency_name,amount,ratesum,currency_code)
-            
 
     def check_currency(self,root,country,currency_name,currency_code):
         current_date = datetime.today().strftime('%d-%m-%Y')
@@ -93,7 +93,14 @@ class HubLogic:
         valid_currency_code = self.cur_data[country][2]
         self.check_currency(root,valid_country_name,valid_currency_name,valid_currency_code)
 
-
+    def get_attractions(self,root,lat,lon,city):
+        attractions_key = "5ae2e3f221c38a28845f05b6a26705706c72ab688b5936158c2d8685"
+        attractions_call = f"http://api.opentripmap.com/0.1/en/places/autosuggest?lon={lon}&lat={lat}&name={city}&radius=10000&format=json&apikey={attractions_key}"
+        request_attractions = requests.get(attractions_call)
+        got_attractions = request_attractions.json()
+        format_attractions = FormatAttractions(root)
+        format_attractions.format_all(got_attractions)
+    
     def load_back(self,root):
         home_ui = HomeUI(root)
         home_ui.place_home_ui()

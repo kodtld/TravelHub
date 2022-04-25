@@ -7,6 +7,7 @@ class HubUI:
         self.weather_box = tk.Label(self.hub_frame, bg="darkblue")
         self.news_box = tk.Label(self.hub_frame, bg="darkblue")
         self.currency_box = tk.Label(self.hub_frame, bg="darkblue")
+        self.attractions_box = tk.Label(self.hub_frame,bg="darkblue")
 
         
     def load_hub_ui(self,lat,lon,city,country):
@@ -33,6 +34,11 @@ class HubUI:
         # Currency box ---------------
         self.currency_box.place(relx=0.44,rely=0.2,relheight=0.32,relwidth=0.56)
         hub_logic.setup_currency_code(self.currency_box,country)
+        # Attractions box ---------------
+        self.attractions_box.place(relx=0.44,rely=0.52,relwidth=0.56,relheight=0.48)
+        attractions_title = tk.Label(self.attractions_box,text=f"Popular attractions in the radius of 10km from {city} centre:",font=("helvetica",20),bg="darkblue",fg="white")
+        attractions_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
+        hub_logic.get_attractions(self.attractions_box,lat,lon,city)
 
         
         

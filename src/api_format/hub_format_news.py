@@ -21,9 +21,16 @@ class FormatNews:
         self.one_box.place(relx=0,rely=0.2,relwidth=1,relheight=0.2)
         self.one_news_box.place(relheight=1,relwidth=1,relx=0)
 
-        one_box_title = tk.Label(self.one_news_box,
-         text=(got_news['results'][0]['title']),bg="lightblue",
-         font=("helvetica",13),justify=tk.LEFT)
+        if len(got_news['results'][0]['title']) > 100:
+            one_box_title = tk.Label(self.one_news_box,
+            text=(got_news['results'][0]['title']),bg="lightblue",
+            font=("helvetica",12),justify=tk.LEFT)
+
+        else:
+            one_box_title = tk.Label(self.one_news_box,
+            text=(got_news['results'][0]['title']),bg="lightblue",
+            font=("helvetica",14),justify=tk.LEFT)
+
         one_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
 
         one_box_source = tk.Label(self.one_news_box,
@@ -41,9 +48,15 @@ class FormatNews:
         self.two_box.place(relx=0,rely=0.4,relwidth=1,relheight=0.2)
         self.two_news_box.place(relheight=1,relwidth=1,relx=0)
 
-        two_box_title = tk.Label(self.two_news_box,
-         text=(got_news['results'][1]['title']),bg="lightblue",
-         font=("helvetica",13),justify=tk.LEFT)
+        if len(got_news['results'][1]['title']) > 100:
+            two_box_title = tk.Label(self.two_news_box,
+            text=(got_news['results'][1]['title']),bg="lightblue",
+            font=("helvetica",12),justify=tk.LEFT)
+
+        else:
+            two_box_title = tk.Label(self.two_news_box,
+            text=(got_news['results'][1]['title']),bg="lightblue",
+            font=("helvetica",14),justify=tk.LEFT)
         two_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
 
         two_box_source = tk.Label(self.two_news_box,
@@ -62,10 +75,17 @@ class FormatNews:
 
         self.three_news_box.place(relheight=1,relwidth=1,relx=0)
 
-        three_box_title = tk.Label(self.three_news_box,
-         text=(got_news['results'][2]['title']),bg="lightblue",
-         font=("helvetica",13),justify=tk.LEFT)
+        if len(got_news['results'][2]['title']) > 100:
+            three_box_title = tk.Label(self.three_news_box,
+            text=(got_news['results'][2]['title']),bg="lightblue",
+            font=("helvetica",12),justify=tk.LEFT)
+
+        else:
+            three_box_title = tk.Label(self.three_news_box,
+            text=(got_news['results'][2]['title']),bg="lightblue",
+            font=("helvetica",14),justify=tk.LEFT)
         three_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
+
 
         three_box_source = tk.Label(self.three_news_box,
          text=f"Source: {got_news['results'][2]['source_id']}",
@@ -83,9 +103,16 @@ class FormatNews:
 
         self.four_news_box.place(relheight=1,relwidth=1,relx=0)
 
-        four_box_title = tk.Label(self.four_news_box,
-         text=(got_news['results'][3]['title']),bg="lightblue",
-         font=("helvetica",13),justify=tk.LEFT)
+        if len(got_news['results'][3]['title']) > 100:
+            four_box_title = tk.Label(self.four_news_box,
+            text=(got_news['results'][3]['title']),bg="lightblue",
+            font=("helvetica",12),justify=tk.LEFT)
+
+        else:
+            four_box_title = tk.Label(self.four_news_box,
+            text=(got_news['results'][3]['title']),bg="lightblue",
+            font=("helvetica",14),justify=tk.LEFT)
+            
         four_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
 
         four_box_source = tk.Label(self.four_news_box,
