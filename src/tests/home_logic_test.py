@@ -1,5 +1,5 @@
 import unittest
-from main import get_GeoCode
+from src.logic.home_logic import HomeLogic
 
 
 class Testget_GeoCode(unittest.TestCase):

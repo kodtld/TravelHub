@@ -115,7 +115,7 @@ class FormatNews:
                 self.two_news(got_news)
             except:
                 two_box_title = tk.Label(self.two_news_box,
-                 text="Couldn't any more news at the moment...",
+                 text="Couldn't find any more news at the moment...",
                 font=("helvetica",14),justify=tk.LEFT,bg="lightblue")
                 two_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
                 break
@@ -124,7 +124,7 @@ class FormatNews:
                 self.three_news(got_news)
             except:
                 three_box_title = tk.Label(self.three_news_box,
-                 text="Couldn't any more news at the moment...",
+                 text="Couldn't find any more news at the moment...",
                  font=("helvetica",14),justify=tk.LEFT,bg="lightblue")
                 three_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
                 break
@@ -133,7 +133,7 @@ class FormatNews:
                 self.four_news(got_news)
             except:
                 four_box_title = tk.Label(self.four_news_box,
-                 text="Couldn't any more news at the moment...",
+                 text="Couldn't find any more news at the moment...",
                  font=("helvetica",14),justify=tk.LEFT,bg="lightblue")
                 four_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
                 break
