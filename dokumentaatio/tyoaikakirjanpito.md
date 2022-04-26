@@ -14,4 +14,11 @@
 | 15.3 |  3   | News API:n käyttöönotto ja lisääminen sovellukseen |
 | 15.3 |  0.5   | UI:n asettelua |
 | 16.3 |  1   | Uuden rakenteen siirtäminen GitHubiin ja koodin pylint siistiminen |
-| Yht. |  25  |    |
+| 19.3 | 0.5   | Currency API:n tutkiminen ja käyttöönotto |
+| 20.3 |  1.5   | Currency API:n testaamista ja koodin aloitus  |
+| 20.3 | 1   | Tiedosto johon API kutsun vastaus tallenetaan alustaminen ja käyttöönotto  |
+| 20.3 | 2   | Valuuttamuuntimen lopullinen koodi projektiin |
+| 21.3 |  2   | Lento API:n etsimistä (ilmaista ja muuten sopivaa lentoja hakevaa API:ta ei löytynyt) |
+| 21.3 | 1  | Korvaavan API:n (Attractions) etsiminen ja käyttöönotto |
+| 21.3 | 2.5   | Attractions ikkunan lopullinen toiminta ja lisääminen projektiin |
+| Yht. |  35.5  |    |
