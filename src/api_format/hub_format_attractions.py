@@ -135,13 +135,13 @@ class FormatAttractions:
     def format_all(self,got_attractions):
         try:
             self.format_one(got_attractions)
-        except:
+        except IndexError:
             pass
         try:
             self.format_two(got_attractions)
-        except:
+        except IndexError:
             pass
         try:
             self.format_three(got_attractions)
-        except:
+        except IndexError:
             pass

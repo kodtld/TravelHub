@@ -131,7 +131,7 @@ class FormatNews:
         while True:
             try:
                 self.one_news(got_news)
-            except:
+            except IndexError:
                 one_box_title = tk.Label(self.one_news_box,
                  text="Couldn't find any news at the moment...",
                  font=("helvetica",14),justify=tk.LEFT,bg="lightblue")
@@ -140,7 +140,7 @@ class FormatNews:
 
             try:
                 self.two_news(got_news)
-            except:
+            except IndexError:
                 two_box_title = tk.Label(self.two_news_box,
                  text="Couldn't find any more news at the moment...",
                 font=("helvetica",14),justify=tk.LEFT,bg="lightblue")
@@ -149,7 +149,7 @@ class FormatNews:
 
             try:
                 self.three_news(got_news)
-            except:
+            except IndexError:
                 three_box_title = tk.Label(self.three_news_box,
                  text="Couldn't find any more news at the moment...",
                  font=("helvetica",14),justify=tk.LEFT,bg="lightblue")
@@ -158,7 +158,7 @@ class FormatNews:
 
             try:
                 self.four_news(got_news)
-            except:
+            except IndexError:
                 four_box_title = tk.Label(self.four_news_box,
                  text="Couldn't find any more news at the moment...",
                  font=("helvetica",14),justify=tk.LEFT,bg="lightblue")

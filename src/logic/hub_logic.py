@@ -37,7 +37,7 @@ class HubLogic:
         format_news.format_all(got_news)
 
     def get_currency(self,root,amount,country,currency_name,currency_code):
-        with open (latest_cur_location,"r") as rate_file:
+        with open (latest_cur_location,"r",encoding="utf8") as rate_file:
             for line in rate_file:
                 split_line = line.split(',')
                 c_code = split_line[0]
@@ -52,7 +52,7 @@ class HubLogic:
 
     def check_currency(self,root,country,currency_name,currency_code):
         current_date = datetime.today().strftime('%d-%m-%Y')
-        with open (latest_cur_location,'r') as checkdate:
+        with open (latest_cur_location,'r',encoding="utf8") as checkdate:
             latest=checkdate.readline().split(',')
 
         # Check if latest request is from same date -------
@@ -67,7 +67,7 @@ class HubLogic:
                 currency_call = f"http://data.fixer.io/api/latest?access_key={currency_key}&base=EUR"
                 request_currency = requests.get(currency_call)
                 got_currency = request_currency.json()
-                with open (latest_cur_location,'w') as w_file:
+                with open (latest_cur_location,'w',encoding="utf8") as w_file:
                     w_file.write(f"Latest_request,{current_date}")
                     w_file.write('\n')
                     for line in got_currency['rates']:
@@ -77,7 +77,7 @@ class HubLogic:
                 self.get_currency(root,10,country,currency_name,currency_code)
 
     def setup_currency_code(self,root,country):
-        with open(cur_code_location,'r') as r_file:
+        with open(cur_code_location,'r',encoding="utf8") as r_file:
             for line in r_file:
                 split_line = line.split(',')
                 self.full_country_name = split_line[0]

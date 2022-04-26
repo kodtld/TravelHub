@@ -20,5 +20,5 @@ class HomeLogic:
             lon = got_geocode[0]['lon']
             self.hub_ui.load_hub_ui(lat, lon, city_name,country)
 
-        except:
+        except IndexError:
             home_ui.place_valid()
