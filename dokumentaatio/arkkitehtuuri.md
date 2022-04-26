@@ -12,6 +12,9 @@
       HubLogic <|-- FormatAttractions
       HubLogic <|-- FormatCurrency
       FormatCurrency .. HubLogic
+      FormatCurrency -- Latest_cur.txt
+      FormatCurrency -- Cur_code_by_a2.txt
+
        
       Index : LoadMainframe()
 
@@ -87,7 +90,7 @@
 
           format_currency_data()
           load_formatted_response_to_root()
-
+          check_for_last_request()
          }
 
 
@@ -100,4 +103,16 @@
 
          }
 
+     
+      class Latest_cur.txt{
+           Date of last request
+	   Exchange rate of euro --> all currencies
+
+         }
+
+      class Cur_code_by_a2.txt{
+           Holds information of currency name
+	   Information of currency code by country code
+
+         }
 ```
