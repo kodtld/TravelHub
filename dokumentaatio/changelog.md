@@ -21,3 +21,12 @@
 - UI elementit "ui" kansiossa
 - Sovelluslogiikka "logic" kansiossa
 - API kutsujen formatointi/järjestys "api_format" kansiossa
+
+## Viikko 5 (toinen vaihe)
+
+- Lisätty Currency_Api joka hakee kohteen valuutan ja muuntaa sen suhteessa euroihin
+- Lisätty tiedosto johon tallennetaan päiväkohtaisesti kaikki valuuttakurssit euroon suhteutettuna
+- Alkuperäisen suunnitelmaan tehty muutos:
+- Lentojen hakeminen osoittautui ilmaisten API:den läpi mahdottomaksi
+- Lentojen hakeminen korvattu kohteen suosittujen nähtävyyksien haulla
+- Nähtävyyksien hakeminen lisätty Attractions_Api:n muodossa 
