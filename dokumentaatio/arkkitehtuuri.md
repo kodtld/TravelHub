@@ -9,7 +9,9 @@
       HubUI ..	HomeUI
       HubLogic <|-- FormatWeather
       HubLogic <|-- FormatNews
-
+      HubLogic <|-- FormatCurrency
+      FormatCurrency .. HubLogic
+      HubLogic <|-- FormatAttractions
        
       Index : LoadMainframe()
 
@@ -54,6 +56,8 @@
             
             call_format_weather(root,got_weather)
             call_format_news(root,got_news)
+	    call_format_currency(root,amount,country,currency_name,currency_code)
+	    call_format_attractions(root,got_attractions)
             return_to_home_ui()
           
          }
@@ -74,6 +78,26 @@
           format_news_from_city()
           load_formatted_response_to_root()
           
+         }
+
+
+      class FormatCurrency{
+           hub_root
+           currency info
+
+          format_currency_data()
+          load_formatted_response_to_root()
+
+         }
+
+
+      class FormatAttractions{
+           hub_root
+           got_attractions
+
+          format_attractions_for_city()
+          load_formatted_response_to_root()
+
          }
 
 ```
