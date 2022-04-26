@@ -1,15 +1,14 @@
-import requests
-from pathlib import Path
-from datetime import datetime
-script_location = Path(__file__).absolute().parent
-cur_code_location = script_location / 'cur_code_by_a2.txt'
-latest_cur_location = script_location / 'latest_cur.txt'
-
 from ui.home_ui import HomeUI
 from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
 from api_format.hub_format_currency import FormatCurrency
 from api_format.hub_format_attractions import FormatAttractions
+from pathlib import Path
+from datetime import datetime
+import requests
+script_location = Path(__file__).absolute().parent
+cur_code_location = script_location / 'cur_code_by_a2.txt'
+latest_cur_location = script_location / 'latest_cur.txt'
 
 class HubLogic:
     def __init__(self,root):
@@ -44,7 +43,7 @@ class HubLogic:
                 c_code = split_line[0]
                 c_rate = split_line[1]
                 self.rate_data[c_code] = c_rate
-            
+
             rate = self.rate_data[currency_code]
             rate = float(rate.strip('\n'))
             ratesum = amount*rate
@@ -55,12 +54,12 @@ class HubLogic:
         current_date = datetime.today().strftime('%d-%m-%Y')
         with open (latest_cur_location,'r') as checkdate:
             latest=checkdate.readline().split(',')
-        
+
         # Check if latest request is from same date -------
             if current_date == latest[1].strip('\n'):
                 print("Previous currency data")
                 self.get_currency(root,10,country,currency_name,currency_code)
-        
+
         # If latest request is old, get new one --------
             else:
                 print("New currency request")
@@ -85,8 +84,9 @@ class HubLogic:
                 self.alpha_2 = split_line[1]
                 self.currency_name = split_line[2]
                 self.currency_code = split_line[3].strip("\n")
-                self.cur_data[self.alpha_2] = [self.full_country_name,self.currency_name,self.currency_code]
-        
+                self.cur_data[self.alpha_2] = [self.full_country_name,self.currency_name
+                 ,self.currency_code]
+
         valid_country_name = self.cur_data[country][0]
         valid_currency_name = self.cur_data[country][1]
         valid_currency_code = self.cur_data[country][2]
@@ -99,7 +99,7 @@ class HubLogic:
         got_attractions = request_attractions.json()
         format_attractions = FormatAttractions(root)
         format_attractions.format_all(got_attractions)
-    
+
     def load_back(self,root):
         home_ui = HomeUI(root)
         home_ui.place_home_ui()

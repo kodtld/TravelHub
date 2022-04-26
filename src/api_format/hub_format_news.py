@@ -112,7 +112,7 @@ class FormatNews:
             four_box_title = tk.Label(self.four_news_box,
             text=(got_news['results'][3]['title']),bg="lightblue",
             font=("helvetica",14),justify=tk.LEFT)
-            
+
         four_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
 
         four_box_source = tk.Label(self.four_news_box,

@@ -23,21 +23,34 @@ class FormatAttractions:
         except:
             wikidata = "None"
         if len(name) > 25:
-            name_and_place = tk.Label(self.one_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",12))
+            name_and_place = tk.Label(self.one_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",12))
         elif len(name) > 35:
-            name_and_place = tk.Label(self.one_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",10))
+            name_and_place = tk.Label(self.one_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",10))
         else:
-            name_and_place = tk.Label(self.one_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",14))
+            name_and_place = tk.Label(self.one_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",14))
         name_and_place.place(relwidth=1,relheight=0.4,relx=0,rely=0)
-        location_tags = tk.Label(self.one_box,text=f"Tags:\n{tags[0][0]}\n{tags[0][1]}\n{tags[0][2]}",bg="lightblue",font=("helvetica",13))
+
+        location_tags = tk.Label(self.one_box,
+         text=f"Tags:\n{tags[0][0]}\n{tags[0][1]}\n{tags[0][2]}",
+         bg="lightblue",font=("helvetica",13))
         location_tags.place(relwidth=1,relheight=0.3,relx=0,rely=0.325)
+
         button_box = tk.Label(self.one_box,bg="lightblue")
         button_box.place(relwidth=1,relheight=0.3,relx=0,rely=0.675)
+
         if wikidata != "None":
             wiki_link = f"https://www.wikidata.org/wiki/{wikidata}"
-            wiki_button = tk.Button(button_box,text="Location Wiki",bg="#7EDCFF",command=lambda:self.open_web(wiki_link),font="helvetica")
+            wiki_button = tk.Button(button_box,text="Location Wiki",
+             bg="#7EDCFF",command=lambda:self.open_web(wiki_link),font="helvetica")
         else:
-            wiki_button = tk.Button(button_box,text="Couldn't find Wiki",bg="#7EDCFF",font="Helvetica")    
+            wiki_button = tk.Button(button_box,text="Couldn't find Wiki",
+             bg="#7EDCFF",font="Helvetica")
         wiki_button.place(relheight=1,relwidth=1,relx=0,rely=0)
 
     def format_two(self,got_attractions):
@@ -52,21 +65,31 @@ class FormatAttractions:
         except:
             wikidata = "None"
         if len(name) > 25:
-            name_and_place = tk.Label(self.two_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",12))
+            name_and_place = tk.Label(self.two_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",12))
         elif len(name) > 35:
-            name_and_place = tk.Label(self.two_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",10))
+            name_and_place = tk.Label(self.two_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",10))
         else:
-            name_and_place = tk.Label(self.two_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",14))
+            name_and_place = tk.Label(self.two_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",14))
         name_and_place.place(relwidth=1,relheight=0.4,relx=0,rely=0)
-        location_tags = tk.Label(self.two_box,text=f"Tags:\n{tags[0][0]}\n{tags[0][1]}\n{tags[0][2]}",bg="lightblue",font=("helvetica",13))
+        location_tags = tk.Label(self.two_box,
+         text=f"Tags:\n{tags[0][0]}\n{tags[0][1]}\n{tags[0][2]}",
+         bg="lightblue",font=("helvetica",13))
         location_tags.place(relwidth=1,relheight=0.3,relx=0,rely=0.325)
         button_box = tk.Label(self.two_box,bg="lightblue")
         button_box.place(relwidth=1,relheight=0.3,relx=0,rely=0.675)
         if wikidata != "None":
             wiki_link = f"https://www.wikidata.org/wiki/{wikidata}"
-            wiki_button = tk.Button(button_box,text="Location Wiki",bg="#7EDCFF",command=lambda:self.open_web(wiki_link),font="helvetica")
+            wiki_button = tk.Button(button_box,text="Location Wiki",
+             bg="#7EDCFF",command=lambda:self.open_web(wiki_link),font="helvetica")
         else:
-            wiki_button = tk.Button(button_box,text="Couldn't find Wiki",bg="#7EDCFF",font="Helvetica")            
+            wiki_button = tk.Button(button_box,text="Couldn't find Wiki",
+             bg="#7EDCFF",font="Helvetica")
         wiki_button.place(relheight=1,relwidth=1,relx=0,rely=0)
 
     def format_three(self,got_attractions):
@@ -81,22 +104,32 @@ class FormatAttractions:
         except:
             wikidata = "None"
         if len(name) > 25:
-            name_and_place = tk.Label(self.three_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",12))
+            name_and_place = tk.Label(self.three_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",12))
         elif len(name) > 35:
-            name_and_place = tk.Label(self.three_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",10))
+            name_and_place = tk.Label(self.three_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",10))
         else:
-            name_and_place = tk.Label(self.three_box,text=f"{name}\n{dist} km from city center",bg="lightblue",font=("helvetica",14))
+            name_and_place = tk.Label(self.three_box,
+             text=f"{name}\n{dist} km from city center",
+             bg="lightblue",font=("helvetica",14))
         name_and_place.place(relwidth=1,relheight=0.4,relx=0,rely=0)
-        location_tags = tk.Label(self.three_box,text=f"Tags:\n{tags[0][0]}\n{tags[0][1]}\n{tags[0][2]}",bg="lightblue",font=("helvetica",13))
+        location_tags = tk.Label(self.three_box,
+         text=f"Tags:\n{tags[0][0]}\n{tags[0][1]}\n{tags[0][2]}",
+        bg="lightblue",font=("helvetica",13))
         location_tags.place(relwidth=1,relheight=0.3,relx=0,rely=0.325)
         button_box = tk.Label(self.three_box,bg="lightblue")
         button_box.place(relwidth=1,relheight=0.3,relx=0,rely=0.675)
         if wikidata != "None":
             wiki_link = f"https://www.wikidata.org/wiki/{wikidata}"
-            wiki_button = tk.Button(button_box,text="Location Wiki",bg="#7EDCFF",command=lambda:self.open_web(wiki_link),font="helvetica")
+            wiki_button = tk.Button(button_box,text="Location Wiki",
+             bg="#7EDCFF",command=lambda:self.open_web(wiki_link),font="helvetica")
         else:
-            wiki_button = tk.Button(button_box,text="Couldn't find Wiki",bg="#7EDCFF",font="Helvetica")
-            
+            wiki_button = tk.Button(button_box,
+             text="Couldn't find Wiki",bg="#7EDCFF",font="Helvetica")
+
         wiki_button.place(relheight=1,relwidth=1,relx=0,rely=0)
 
     def format_all(self,got_attractions):
