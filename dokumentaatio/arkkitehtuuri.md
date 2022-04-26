@@ -9,9 +9,9 @@
       HubUI ..	HomeUI
       HubLogic <|-- FormatWeather
       HubLogic <|-- FormatNews
+      HubLogic <|-- FormatAttractions
       HubLogic <|-- FormatCurrency
       FormatCurrency .. HubLogic
-      HubLogic <|-- FormatAttractions
        
       Index : LoadMainframe()
 
