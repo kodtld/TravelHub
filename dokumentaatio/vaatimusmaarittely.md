@@ -6,7 +6,7 @@ Tämä katsaus sisältää kohteen valuuttakurssin/muuntajan *TEHTY*, kohteen s�
 sekä tiedot kohteen nähtävyyksistä *TEHTY*.
 
 ## Käyttöliittymäluonnos
-Sovellus koostuu kahdesta näkymästä."TEHTY" Ensimmäisessä näkymässä valitaan matkustuskohde.
+Sovellus koostuu kahdesta näkymästä *TEHTY*. Ensimmäisessä näkymässä valitaan matkustuskohde.
 Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisiin lähteisiin.
 
 ![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kayttoliittyma_draft.png)
@@ -14,11 +14,11 @@ Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisi
 ## Sovelluksen toiminnallisuus
 Sovelluksen tämänhetkinen toiminnallisuus:
 - Etusivu
-  - Käyttäjä syöttää validin kohde-kaupungin."TEHTY"
+  - Käyttäjä syöttää validin kohde-kaupungin.*TEHTY*
   - Mikäli kohde ei ole validi, pyytää ohjelma uutta syötettä
 - Sisältösivu
   - Käyttäjä voi syöttää arvoja valuuttamuuntajaan.
-  - Käyttäjä näkee kohteen uutiset *TEHTY*, nähtävyydet*TEHTY* (alkuperäinen suunnitelma oli lennot, mutta sopivaa API:ta ei löytynyt) ,Valuuttamuuntajan *TEHTY* , sekä sään*TEHTY*. (Uutiset, sekä nähtävyydet sisältävät linkit ulkoisiin lähteisiin).
+  - Käyttäjä näkee kohteen uutiset *TEHTY*, nähtävyydet *TEHTY* (alkuperäinen suunnitelma oli lennot, mutta sopivaa API:ta ei löytynyt), Valuuttamuuntajan *TEHTY*, sekä sään *TEHTY*. (Uutiset, sekä nähtävyydet sisältävät linkit ulkoisiin lähteisiin).
   - Sisältösivulta pääsee "return" painikkeella takaisin etusivulle.
 
 ## Jatkokehitysideoita
