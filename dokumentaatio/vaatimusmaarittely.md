@@ -2,11 +2,11 @@
 
 ## Sovelluksen perusidea
 Sovellus tarjoaa katsauksen käyttäjän valitsemaan matkustuskohteeseen. 
-Tämä katsaus sisältää kohteen valuuttakurssin/muuntajan, kohteen sää-ennusteen "TEHTY" tulevilta päiviltä, viimeisemmät uutiset kohteesta,
-sekä ajankohtaiset tiedot lentojen hinnoista kohteeseen.
+Tämä katsaus sisältää kohteen valuuttakurssin/muuntajan *TEHTY*, kohteen sää-ennusteen *TEHTY* tulevilta päiviltä, viimeisemmät uutiset kohteesta *TEHTY*,
+sekä tiedot kohteen nähtävyyksistä *TEHTY*.
 
 ## Käyttöliittymäluonnos
-Sovellus koostuu kahdesta näkymästä."TEHTY" Ensimmäisessä näkymässä valitaan matkustuskohde, sekä matkan ajankohta (jos tiedossa).
+Sovellus koostuu kahdesta näkymästä."TEHTY" Ensimmäisessä näkymässä valitaan matkustuskohde.
 Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisiin lähteisiin.
 
 ![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kayttoliittyma_draft.png)
@@ -15,10 +15,10 @@ Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisi
 Sovelluksen tämänhetkinen toiminnallisuus:
 - Etusivu
   - Käyttäjä syöttää validin kohde-kaupungin."TEHTY"
-  - Käyttäjä valitsee joko lähto-, ja paluupäivämäärän, tai valitsee tehdä haun ilman tarkkaa päivämäärää.
+  - Mikäli kohde ei ole validi, pyytää ohjelma uutta syötettä
 - Sisältösivu
   - Käyttäjä voi syöttää arvoja valuuttamuuntajaan.
-  - Käyttäjä näkee kohteen uutiset, lennot, sekä sään (sää TEHTY). (Uutiset, sekä lennot sisältävät linkit ulkoisiin lähteisiin).
+  - Käyttäjä näkee kohteen uutiset *TEHTY*, nähtävyydet*TEHTY* (alkuperäinen suunnitelma oli lennot, mutta sopivaa API:ta ei löytynyt) ,Valuuttamuuntajan *TEHTY* , sekä sään*TEHTY*. (Uutiset, sekä nähtävyydet sisältävät linkit ulkoisiin lähteisiin).
   - Sisältösivulta pääsee "return" painikkeella takaisin etusivulle.
 
 ## Jatkokehitysideoita
