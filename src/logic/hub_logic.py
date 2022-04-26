@@ -72,11 +72,10 @@ class HubLogic:
                     w_file.write(f"Latest_request,{current_date}")
                     w_file.write('\n')
                     for line in got_currency['rates']:
-                        code = line
                         rate = got_currency['rates'][line]
                         w_file.write(f"{line},{rate}")
                         w_file.write('\n')
-                self.get_currency(root,country,currency_name,currency_code)
+                self.get_currency(root,10,country,currency_name,currency_code)
 
     def setup_currency_code(self,root,country):
         with open(cur_code_location,'r') as r_file:
