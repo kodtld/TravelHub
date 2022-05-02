@@ -1,11 +1,11 @@
+from pathlib import Path
+from datetime import datetime
+import requests
 from ui.home_ui import HomeUI
 from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
 from api_format.hub_format_currency import FormatCurrency
 from api_format.hub_format_attractions import FormatAttractions
-from pathlib import Path
-from datetime import datetime
-import requests
 script_location = Path(__file__).absolute().parent
 cur_code_location = script_location / 'cur_code_by_a2.txt'
 latest_cur_location = script_location / 'latest_cur.txt'
