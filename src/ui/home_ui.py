@@ -1,4 +1,3 @@
-from numpy import place
 from logic.home_logic import HomeLogic
 from ui.hub_ui import HubUI
 import tkinter as tk
@@ -32,12 +31,12 @@ class HomeUI:
     def place_home_ui(self):
         self.home_frame.place(relheight=1,relwidth=1,relx=0,rely=0)
         self.logo.place(relx=0.25, rely=0.15, relheight=0.5, relwidth=0.5)
-        self.home_entry.insert(tk.END, "Type in your destination city...")
+        self.home_entry.insert(tk.END,"Type in your destination city...")
         self.home_entry.place(relx=0.3, rely=0.5, relwidth=0.4, relheight=0.1)
         self.take_button.place(relx=0.3, rely=0.63, relwidth=0.4, relheight=0.1)
 
     def place_valid(self):
-        self.place_home_ui()
+        
         self.valid.place(relx=0.3, rely=0.75, relwidth=0.4, relheight=0.1)
         
         
