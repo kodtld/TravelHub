@@ -1,20 +1,33 @@
+from numpy import place
 from logic.home_logic import HomeLogic
+from ui.hub_ui import HubUI
 import tkinter as tk
 
 class HomeUI:
     def __init__(self,root):
         self.root = root
         self.home_frame = tk.Label(self.root, bg="lightblue")
-        home_logic = HomeLogic(self.root)
+        self.home_logic = HomeLogic()
+        self.hub_ui = HubUI(self.root)
         self.logo = tk.Label(self.home_frame, bg="lightblue", font=(
             "helvetica", 64), text="TravelHUB")
         self.home_entry = tk.Entry(self.home_frame, bg="white", font="helvetica", justify=tk.CENTER)
+        
         self.take_button = tk.Button(self.home_frame, bg="#00BAFF",
          activebackground="#7EDCFF", text="Take me there!",
          font="helvetica", fg="white", activeforeground="white",
-         command=lambda: home_logic.get_geo_code(self.root,self.home_entry.get()))
+         command=self.show_home_ui)
+        
         self.valid = tk.Label(self.home_frame, text="Please enter a valid destination...",
             font="helvetica", bg="lightblue")
+
+    def show_home_ui(self):
+        return_dict = self.home_logic.get_geo_code(self.home_entry.get())
+        if return_dict != "Invalid":
+            self.hub_ui.load_hub_ui(return_dict['lat'],return_dict['lon'],return_dict['city_name'],return_dict['country'])
+        
+        else:
+            self.place_valid()
 
     def place_home_ui(self):
         self.home_frame.place(relheight=1,relwidth=1,relx=0,rely=0)

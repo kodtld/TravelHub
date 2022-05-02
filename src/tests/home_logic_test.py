@@ -1,15 +1,16 @@
+from logging import root
 import unittest
-from src.logic.home_logic import HomeLogic
+from logic.home_logic import HomeLogic
 
 
 class Testget_GeoCode(unittest.TestCase):
     def setUp(self):
         print("Set up goes here")
+        self.root = root
 
     def test_invalid_insert(self):
-        self.assertEqual(get_GeoCode("asdiof"),
-                         "Please enter valid destination...")
+        self.assertEqual(HomeLogic.get_geo_code(self,"adshfiuahsdiufhaiu"),
+                         "Invalid")
 
     def test_valid_insert(self):
-        self.assertEqual(get_GeoCode(
-            "London"), "City: London, Latitude: 51.5073219, Longitude: -0.1276474")
+        self.assertEqual(HomeLogic.get_geo_code(self,"Helsinki"), {'lat': 60.1674881, 'lon': 24.9427473, 'city_name': 'Helsinki', 'country': 'FI'})
