@@ -5,7 +5,7 @@
       MainFrame <|-- HomeUI
       HomeLogic <|-- HomeUI
       HomeUI <|-- HubUI
-      HubUI <|-- HubLogic
+      HubLogic <|-- HubUI
       HubUI ..	HomeUI
       HubUI <|-- FormatWeather
       HubUI <|-- FormatNews
@@ -48,19 +48,19 @@
             call_get_weather(root,lat,long)
             call_get_news(root,cityname)
             call_return_to_home_ui(from hub_logic)
-          
+            call_format_weather(root,got_weather)
+            call_format_news(root,got_news)
+            call_format_currency(root,amount,country,currency_name,currency_code)
+            call_format_attractions(root,got_attractions)
+            return_to_home_ui()
          }
 
       class HubLogic{
 
           get_weather(root,lat,long)
-  	     get_news(root,cityname)
-            
-            call_format_weather(root,got_weather)
-            call_format_news(root,got_news)
-	    call_format_currency(root,amount,country,currency_name,currency_code)
-	    call_format_attractions(root,got_attractions)
-            return_to_home_ui()
+  	  get_news(root,cityname)
+          get_currency()
+	  get_attractions()  
           
          }
 
