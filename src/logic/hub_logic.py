@@ -20,13 +20,27 @@ class HubLogic:
         self.currency_name = ""
         self.currency_code = ""
 
-    def get_weather(self,root, lat, lon):
+    def get_weather(self, lat, lon):
         weather_key = "10ab2060f30ce15d80acaef3490a3c36"
         weather_call = f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=current,minutely,hourly,alerts&appid={weather_key}&units=metric"
         request_weather = requests.get(weather_call)
         got_weather = request_weather.json()
-        format_weather = FormatWeather(root)
-        format_weather.format_all(got_weather)
+        return_list = {}
+        
+     #   print(got_weather)
+        for i in range(0,5):
+            current_weather = got_weather['daily'][i]['temp']['day']
+            current_weather_min = got_weather['daily'][i]['temp']['min']
+            current_date = datetime.utcfromtimestamp(
+             got_weather['daily'][i]['dt']).strftime('%d-%m')
+            current_icon_for_call = (got_weather['daily'][i]['weather'][0]['icon'])
+            current_iconcall = f"http://openweathermap.org/img/wn/{current_icon_for_call}@2x.png"
+            return_list[i] = []
+            return_list[i] += [{'weather':current_weather,'weather_min':current_weather_min,'date':current_date,'icon':current_iconcall}]
+            
+        
+        #print(return_list)
+        return return_list
 
     def get_news(self,root,city):
         news_key = "pub_65366296de188355aee04321d64daafeca16"

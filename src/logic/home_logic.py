@@ -14,6 +14,7 @@ class HomeLogic:
             lat = got_geocode[0]['lat']
             lon = got_geocode[0]['lon']
             re_dict = {"lat":lat,"lon":lon,"city_name":city_name,"country":country}
+        
         except IndexError:
             re_dict = "Invalid"
         return re_dict
