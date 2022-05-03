@@ -27,4 +27,5 @@
 | 3.5 | 0.5   | Get_news palautteen formatointia jotta pidemmät uutiset sopivat ruudulle paremmin  |
 | 3.5 | 1   | Get_attractions rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
 | 3.5 | 0.2   | Return button siiretty pois logiikasta  |
-| Yht. |  44.2  |    |
+| 3.5 | 0.4   | Get_Currency rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
+| Yht. |  45  |    |
