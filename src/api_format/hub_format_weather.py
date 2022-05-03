@@ -5,18 +5,9 @@ from PIL import ImageTk
 class FormatWeather:
     def form_weather(self,root,weather,weather_min,date,icon,i):
         self.current_box = tk.Label(root, bg="darkblue")
-        if i == 0:
-            x = 0
-        if i == 1:
-            x = 0.2
-        if i == 2:
-            x = 0.4
-        if i == 3:
-            x = 0.6
-        if i == 4:
-            x = 0.8
+        x_val = i*0.2
         # Current weather box -------------------------------------------------
-        self.current_box.place(relx=x, rely=0, relwidth=0.2, relheight=1)
+        self.current_box.place(relx=x_val, rely=0, relwidth=0.2, relheight=1)
         current_weather_day_text = tk.Label(
             self.current_box, text=f"Daily average: {weather}°C",
              font=("helvetica", 13), bg="lightblue")
