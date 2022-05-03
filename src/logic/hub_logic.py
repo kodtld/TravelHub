@@ -1,8 +1,8 @@
 from pathlib import Path
 from datetime import datetime
+from matplotlib.pyplot import title
 import requests
 from ui.home_ui import HomeUI
-from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
 from api_format.hub_format_currency import FormatCurrency
 from api_format.hub_format_attractions import FormatAttractions
@@ -26,8 +26,7 @@ class HubLogic:
         request_weather = requests.get(weather_call)
         got_weather = request_weather.json()
         return_list = {}
-        
-     #   print(got_weather)
+
         for i in range(0,5):
             current_weather = got_weather['daily'][i]['temp']['day']
             current_weather_min = got_weather['daily'][i]['temp']['min']
@@ -38,16 +37,31 @@ class HubLogic:
             return_list[i] = []
             return_list[i] += [{'weather':current_weather,'weather_min':current_weather_min,'date':current_date,'icon':current_iconcall}]
 
-        #print(return_list)
         return return_list
 
-    def get_news(self,root,city):
+    def get_news(self,city):
         news_key = "pub_65366296de188355aee04321d64daafeca16"
         news_call = f"https://newsdata.io/api/1/news?apikey={news_key}&q={city}&language=en&category=top,world"
         request_news = requests.get(news_call)
         got_news = request_news.json()
-        format_news = FormatNews(root)
-        format_news.format_all(got_news)
+        return_list = {}
+        for i in range(0,4):
+            try:
+                title = got_news['results'][i]['title']
+                source = got_news['results'][i]['source_id']
+                link = got_news['results'][i]['link']
+                return_list[i] = []
+                return_list[i] = [{'title':title,'source':source,'link':link}]
+            
+            except IndexError:
+                title = "Couldn't find more news..."
+                source = ""
+                link = ""
+                return_list[i] = []
+                return_list[i] = [{'title':title,'source':source,'link':link}]
+
+        return return_list
+
 
     def get_currency(self,root,amount,country,currency_name,currency_code):
         with open (latest_cur_location,"r",encoding="utf8") as rate_file:

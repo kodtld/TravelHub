@@ -1,9 +1,11 @@
 import tkinter as tk
 from api_format.hub_format_weather import FormatWeather
+from api_format.hub_format_news import FormatNews
 class HubUI:
     def __init__(self,root):
         self.root = root
         self.format_weather = FormatWeather()
+        self.format_news = FormatNews()
         self.hub_frame = tk.Label(self.root, bg="lightblue")
         self.destinationbox = tk.Label(self.hub_frame, bg="darkblue")
         self.weather_box = tk.Label(self.hub_frame, bg="darkblue")
@@ -36,7 +38,10 @@ class HubUI:
         self.news_box.place(relx=0,rely=0.2,relwidth=0.44,relheight=0.8)
         self.news_header_text = tk.Label(self.news_box,text=f"Latest news from: {city}",font=("helvetica",20),bg="darkblue",fg="white")
         self.news_header_text.place(relx=0,rely=0,relwidth=1,relheight=0.2)
-        hub_logic.get_news(self.news_box,city)
+        news_return = hub_logic.get_news(city)
+        for i in news_return:
+            #print(news_return[i][0]['title'],news_return[i][0]['source'],news_return[i][0]['link'],i)
+            self.format_news.form_news(self.news_box,news_return[i][0]['title'],news_return[i][0]['source'],news_return[i][0]['link'],i)
         
         # Currency box ---------------
         self.currency_box.place(relx=0.44,rely=0.2,relheight=0.32,relwidth=0.56)
