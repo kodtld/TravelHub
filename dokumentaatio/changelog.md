@@ -36,7 +36,7 @@
 - Koodin rakennetta muokattu oleellisesti jotta testien kirjoittaminen on päästy aloittamaan
 - Format_Weather ja Format_News, Format_Attractions luokkien sisältö vähentynyt yli sadalla rivillä
 - Käyttöliittymän ja UI:n erottelu entistä paremmassa vaiheessa
-- Ensimmäiset testit lisätty
+- Ensimmäiset testit lisätty (testit kattavat nyt kotisivun). HUB sivun logiikan testaus vaatii koko HUB sivun uudelleenformatointia, joka on pian tehty, testit luokalle ovat seuraavana työjonossa.
 - Kutsumarakenne muuttunut, pian logiikka täysin erillään UI:sta
 - Get_News formatointia hieman kehitetty jotta pidemmät uutiset mahtuvat ruudulle paremmin
 - Format_Currency osalta eroteltu UI ja logiikka (tästä aiheutui ongelma, jossa valuuttamuunnoksen haku uudestaan ei onnistu)((korjataan mahdollisimman pian))
