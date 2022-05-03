@@ -21,9 +21,10 @@
 | 21.4 |  2   | Lento API:n etsimistä (ilmaista ja muuten sopivaa lentoja hakevaa API:ta ei löytynyt) |
 | 21.4 | 1  | Korvaavan API:n (Attractions) etsiminen ja käyttöönotto |
 | 21.4 | 2.5   | Attractions ikkunan lopullinen toiminta ja lisääminen projektiin |
-| 2.5 | 1   | Koodin siistimistä ja import errorien korjausta |
+| 2.5 | 2   | Koodin siistimistä ja import errorien korjausta/ ensimmäiset testit lisätty rakennemuutoksen ansiosta |
 | 2.5 | 3   | Get_weather rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
 | 3.5 | 2   | Get_news rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista |
 | 3.5 | 0.5   | Get_news palautteen formatointia jotta pidemmät uutiset sopivat ruudulle paremmin  |
 | 3.5 | 1   | Get_attractions rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
-| Yht. |  43  |    |
+| 3.5 | 0.2   | Return button siiretty pois logiikasta  |
+| Yht. |  44.2  |    |
