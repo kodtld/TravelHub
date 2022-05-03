@@ -1,9 +1,7 @@
 from pathlib import Path
 from datetime import datetime
-from matplotlib.pyplot import title
 import requests
 from ui.home_ui import HomeUI
-from api_format.hub_format_news import FormatNews
 from api_format.hub_format_currency import FormatCurrency
 from api_format.hub_format_attractions import FormatAttractions
 script_location = Path(__file__).absolute().parent
@@ -52,7 +50,7 @@ class HubLogic:
                 link = got_news['results'][i]['link']
                 return_list[i] = []
                 return_list[i] = [{'title':title,'source':source,'link':link}]
-            
+
             except IndexError:
                 title = "Couldn't find more news..."
                 source = ""
@@ -90,8 +88,8 @@ class HubLogic:
         # If latest request is old, get new one --------
             else:
                 print("New currency request")
-                currency_key = "dec91b528e3e153051ddb55d9c26f488"
-                currency_call = f"http://data.fixer.io/api/latest?access_key={currency_key}&base=EUR"
+                curre_key = "dec91b528e3e153051ddb55d9c26f488"
+                currency_call = f"http://data.fixer.io/api/latest?access_key={curre_key}&base=EUR"
                 request_currency = requests.get(currency_call)
                 got_currency = request_currency.json()
                 with open (latest_cur_location,'w',encoding="utf8") as w_file:
