@@ -3,15 +3,15 @@
       
       Index  -- MainFrame
       MainFrame <|-- HomeUI
-      HomeUI <|-- HomeLogic
-      HomeLogic <|-- HubUI
+      HomeLogic <|-- HomeUI
+      HomeUI <|-- HubUI
       HubUI <|-- HubLogic
       HubUI ..	HomeUI
-      HubLogic <|-- FormatWeather
-      HubLogic <|-- FormatNews
-      HubLogic <|-- FormatAttractions
-      HubLogic <|-- FormatCurrency
-      FormatCurrency .. HubLogic
+      HubUI <|-- FormatWeather
+      HubUI <|-- FormatNews
+      HubUI <|-- FormatAttractions
+      HubUI <|-- FormatCurrency
+      FormatCurrency .. HubUI
       FormatCurrency -- Latest_cur_txt
       FormatCurrency -- Cur_code_by_a2_txt
 
@@ -31,7 +31,7 @@
          }
 
       class HomeLogic{
-           home_root
+          
   	     get_geo_code(turns homeUI entry into latitude and logitude code)
             call_load_hub_UI()
           
@@ -52,7 +52,6 @@
          }
 
       class HubLogic{
-           hub_root
 
           get_weather(root,lat,long)
   	     get_news(root,cityname)
