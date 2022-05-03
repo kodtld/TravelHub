@@ -1,11 +1,13 @@
 import tkinter as tk
 from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
+from api_format.hub_format_attractions import FormatAttractions
 class HubUI:
     def __init__(self,root):
         self.root = root
         self.format_weather = FormatWeather()
         self.format_news = FormatNews()
+        self.format_attractions = FormatAttractions()
         self.hub_frame = tk.Label(self.root, bg="lightblue")
         self.destinationbox = tk.Label(self.hub_frame, bg="darkblue")
         self.weather_box = tk.Label(self.hub_frame, bg="darkblue")
@@ -51,7 +53,9 @@ class HubUI:
         self.attractions_box.place(relx=0.44,rely=0.52,relwidth=0.56,relheight=0.48)
         attractions_title = tk.Label(self.attractions_box,text=f"Popular attractions in the radius of 10km from {city} centre:",font=("helvetica",20),bg="darkblue",fg="white")
         attractions_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
-        hub_logic.get_attractions(self.attractions_box,lat,lon,city)
+        attract_return = hub_logic.get_attractions(lat,lon,city)
+        for i in attract_return:
+            self.format_attractions.form_att(self.attractions_box,attract_return[i][0]['name'],attract_return[i][0]['dist'],attract_return[i][0]['tags'],attract_return[i][0]['link'],i)
 
         
         

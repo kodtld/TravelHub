@@ -13,16 +13,17 @@ class FormatNews:
         news_box.place(relx=0,rely=y_val,relwidth=1,relheight=0.2)
         news_box_cont.place(relheight=1,relwidth=1,relx=0)
 
+
         if len(title) > 100:
-            one_box_title = tk.Label(news_box_cont,
-            text=(title),bg="lightblue",
-            font=("helvetica",12),justify=tk.LEFT)
-
+            f_size = 8
+        if len(title) > 80:
+            f_size = 12
         else:
-            one_box_title = tk.Label(news_box_cont,
-            text=(title),bg="lightblue",
-            font=("helvetica",14),justify=tk.LEFT)
+            f_size = 14
 
+        one_box_title = tk.Label(news_box_cont,
+         text=(title),bg="lightblue",
+         font=("helvetica",f_size),justify=tk.LEFT)
         one_box_title.place(relwidth=1,relheight=0.3,relx=0,rely=0)
 
         one_box_source = tk.Label(news_box_cont,

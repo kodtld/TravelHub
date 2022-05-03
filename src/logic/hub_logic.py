@@ -3,7 +3,6 @@ from datetime import datetime
 import requests
 from ui.home_ui import HomeUI
 from api_format.hub_format_currency import FormatCurrency
-from api_format.hub_format_attractions import FormatAttractions
 script_location = Path(__file__).absolute().parent
 cur_code_location = script_location / 'cur_code_by_a2.txt'
 latest_cur_location = script_location / 'latest_cur.txt'
@@ -20,7 +19,9 @@ class HubLogic:
 
     def get_weather(self, lat, lon):
         weather_key = "10ab2060f30ce15d80acaef3490a3c36"
-        weather_call = f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=current,minutely,hourly,alerts&appid={weather_key}&units=metric"
+        weather_call = (f"https://api.openweathermap.org/data/2.5/onecall?"
+         f"lat={lat}&lon={lon}&exclude=current,minutely,hourly,alerts"
+         f"&appid={weather_key}&units=metric")
         request_weather = requests.get(weather_call)
         got_weather = request_weather.json()
         return_list = {}
@@ -33,16 +34,21 @@ class HubLogic:
             current_icon_for_call = (got_weather['daily'][i]['weather'][0]['icon'])
             current_iconcall = f"http://openweathermap.org/img/wn/{current_icon_for_call}@2x.png"
             return_list[i] = []
-            return_list[i] += [{'weather':current_weather,'weather_min':current_weather_min,'date':current_date,'icon':current_iconcall}]
+            return_list[i] += [{'weather':current_weather,
+             'weather_min':current_weather_min,
+             'date':current_date,
+             'icon':current_iconcall}]
 
         return return_list
 
     def get_news(self,city):
         news_key = "pub_65366296de188355aee04321d64daafeca16"
-        news_call = f"https://newsdata.io/api/1/news?apikey={news_key}&q={city}&language=en&category=top,world"
+        news_call = (f"https://newsdata.io/api/1/news?"
+         f"apikey={news_key}&q={city}&language=en&category=top,world")
         request_news = requests.get(news_call)
         got_news = request_news.json()
         return_list = {}
+
         for i in range(0,4):
             try:
                 title = got_news['results'][i]['title']
@@ -59,7 +65,6 @@ class HubLogic:
                 return_list[i] = [{'title':title,'source':source,'link':link}]
 
         return return_list
-
 
     def get_currency(self,root,amount,country,currency_name,currency_code):
         with open (latest_cur_location,"r",encoding="utf8") as rate_file:
@@ -117,13 +122,38 @@ class HubLogic:
         valid_currency_code = self.cur_data[country][2]
         self.check_currency(root,valid_country_name,valid_currency_name,valid_currency_code)
 
-    def get_attractions(self,root,lat,lon,city):
+    def get_attractions(self,lat,lon,city):
         attractions_key = "5ae2e3f221c38a28845f05b6a26705706c72ab688b5936158c2d8685"
-        attractions_call = f"http://api.opentripmap.com/0.1/en/places/autosuggest?lon={lon}&lat={lat}&name={city}&radius=10000&format=json&apikey={attractions_key}"
+        attractions_call = (f"http://api.opentripmap.com/0.1/en/places/autosuggest?"
+         f"lon={lon}&lat={lat}&name={city}&radius=10000"
+         f"&format=json&apikey={attractions_key}")
         request_attractions = requests.get(attractions_call)
         got_attractions = request_attractions.json()
-        format_attractions = FormatAttractions(root)
-        format_attractions.format_all(got_attractions)
+        return_list = {}
+        for i in range(0,3):
+            try:
+                name = got_attractions[i]['name']
+                dist = got_attractions[i]['dist']*0.001
+                dist = "{:.1f}".format(dist)
+                tags = [got_attractions[i]['kinds'].split(",")]
+
+            except IndexError:
+                name = "Couldn't find an attraction"
+                dist = ""
+                tags = ""
+                wikidata = "No available wikidata"
+
+            try:
+                wikidata = got_attractions[i]['wikidata']
+                wiki_link = f"https://www.wikidata.org/wiki/{wikidata}"
+            except (KeyError,IndexError):
+                wikidata = "No available wikidata"
+                wiki_link = "None"
+
+            return_list[i] = []
+            return_list[i] = [{'name':name,'dist':dist,'tags':tags,'link':wiki_link}]
+
+        return return_list
 
     def load_back(self,root):
         home_ui = HomeUI(root)
