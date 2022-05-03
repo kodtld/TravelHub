@@ -25,4 +25,5 @@
 | 2.5 | 3   | Get_weather rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
 | 3.5 | 2   | Get_news rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista |
 | 3.5 | 0.5   | Get_news palautteen formatointia jotta pidemmät uutiset sopivat ruudulle paremmin  |
-| Yht. |  42  |    |
+| 3.5 | 1   | Get_attractions rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
+| Yht. |  43  |    |
