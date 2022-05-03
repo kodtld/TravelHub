@@ -34,8 +34,9 @@
 ## Viikko 6
 
 - Koodin rakennetta muokattu oleellisesti jotta testien kirjoittaminen on päästy aloittamaan
-- Format_Weather ja Format_News luokkien sisältö vähentynyt yli sadalla rivillä
+- Format_Weather ja Format_News, Format_Attractions luokkien sisältö vähentynyt yli sadalla rivillä
 - Käyttöliittymän ja UI:n erottelu entistä paremmassa vaiheessa
 - Ensimmäiset testit lisätty
 - Kutsumarakenne muuttunut, pian logiikka täysin erillään UI:sta
 - Get_News formatointia hieman kehitetty jotta pidemmät uutiset mahtuvat ruudulle paremmin
+- Format_Currency osalta eroteltu UI ja logiikka (tästä aiheutui ongelma, jossa valuuttamuunnoksen haku uudestaan ei onnistu)((korjataan mahdollisimman pian))
