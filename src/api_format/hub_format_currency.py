@@ -27,7 +27,7 @@ class FormatCurrency:
          text=f"The official currency of {country} is: {currency_name}",font=("helvetica",18))
         info_text.place(relheight=1,relwidth=1,relx=0,rely=0)
 
-        ratesum = "{:.2f}".format(ratesum)
+        ratesum = f"{ratesum:.2f}"
         ratesum_text = tk.Label(self.ratesum_text,bg="lightblue",
          text=f"For {amount} Euro's, you'll get {ratesum} {currency_name}'s",font=("helvetica",18))
         ratesum_text.place(relheight=1,relwidth=1,relx=0,rely=0)

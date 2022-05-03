@@ -1,7 +1,6 @@
 from pathlib import Path
 from datetime import datetime
 import requests
-from api_format.hub_format_currency import FormatCurrency
 script_location = Path(__file__).absolute().parent
 cur_code_location = script_location / 'cur_code_by_a2.txt'
 latest_cur_location = script_location / 'latest_cur.txt'
@@ -76,7 +75,6 @@ class HubLogic:
             rate = float(rate.strip('\n'))
             ratesum = amount*rate
             return (country,currency_name,amount,ratesum,currency_code)
-            
 
     def check_currency(self):
         current_date = datetime.today().strftime('%d-%m-%Y')
@@ -86,7 +84,6 @@ class HubLogic:
         # Check if latest request is from same date -------
             if current_date == latest[1].strip('\n'):
                 print("Previous currency data")
-                
 
         # If latest request is old, get new one --------
             else:
@@ -102,7 +99,7 @@ class HubLogic:
                         rate = got_currency['rates'][line]
                         w_file.write(f"{line},{rate}")
                         w_file.write('\n')
-            
+
             #self.get_currency(10,country,currency_name,currency_code)
 
     def setup_currency_code(self,country):
@@ -134,7 +131,7 @@ class HubLogic:
             try:
                 name = got_attractions[i]['name']
                 dist = got_attractions[i]['dist']*0.001
-                dist = "{:.1f}".format(dist)
+                dist = f"{dist:.1f}"
                 tags = [got_attractions[i]['kinds'].split(",")]
 
             except IndexError:

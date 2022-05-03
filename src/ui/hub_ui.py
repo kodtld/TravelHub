@@ -55,13 +55,13 @@ class HubUI:
         # Currency box ---------------
         self.currency_box.place(relx=0.44,rely=0.2,relheight=0.32,relwidth=0.56)
         setup_currency_return = self.hub_logic.setup_currency_code(country)
-        print(setup_currency_return)
+        #print(setup_currency_return)
         country = setup_currency_return[0]
         currency_name = setup_currency_return[1]
         currency_code = setup_currency_return[2]
         self.hub_logic.check_currency()
         get_currency_return = self.hub_logic.get_currency(10,country,currency_name,currency_code)
-        print(get_currency_return)
+        #print(get_currency_return)
         amount = get_currency_return[2]
         ratesum = get_currency_return[3]
         self.format_currency.format_all(country,currency_name,amount,ratesum,currency_code)
