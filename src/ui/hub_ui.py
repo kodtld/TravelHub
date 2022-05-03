@@ -11,7 +11,6 @@ class HubUI:
         self.currency_box = tk.Label(self.hub_frame, bg="darkblue")
         self.attractions_box = tk.Label(self.hub_frame,bg="darkblue")
 
-        
     def load_hub_ui(self,lat,lon,city,country):
         self.hub_frame.place(relheight=1,relwidth=1,relx=0,rely=0)
         # Destination box ---------------

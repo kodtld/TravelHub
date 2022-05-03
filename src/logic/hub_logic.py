@@ -37,8 +37,7 @@ class HubLogic:
             current_iconcall = f"http://openweathermap.org/img/wn/{current_icon_for_call}@2x.png"
             return_list[i] = []
             return_list[i] += [{'weather':current_weather,'weather_min':current_weather_min,'date':current_date,'icon':current_iconcall}]
-            
-        
+
         #print(return_list)
         return return_list
 
