@@ -3,6 +3,8 @@ Sovellus tarjoaa katsauksen käyttäjän valitsemaan matkustuskohteeseen. Tämä
 
 ## Dokumentaatio
 
+[Käyttö-ohje](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 [vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
