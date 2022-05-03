@@ -1,7 +1,6 @@
 from pathlib import Path
 from datetime import datetime
 import requests
-from ui.home_ui import HomeUI
 from api_format.hub_format_currency import FormatCurrency
 script_location = Path(__file__).absolute().parent
 cur_code_location = script_location / 'cur_code_by_a2.txt'
@@ -154,7 +153,3 @@ class HubLogic:
             return_list[i] = [{'name':name,'dist':dist,'tags':tags,'link':wiki_link}]
 
         return return_list
-
-    def load_back(self,root):
-        home_ui = HomeUI(root)
-        home_ui.place_home_ui()
