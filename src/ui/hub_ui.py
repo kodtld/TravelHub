@@ -2,6 +2,7 @@ import tkinter as tk
 from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
 from api_format.hub_format_attractions import FormatAttractions
+from api_format.hub_format_currency import FormatCurrency
 from logic.hub_logic import HubLogic
 class HubUI:
     def __init__(self,root):
@@ -10,11 +11,12 @@ class HubUI:
         self.format_news = FormatNews()
         self.format_attractions = FormatAttractions()
         self.hub_frame = tk.Label(self.root, bg="lightblue")
-        self.hub_logic = HubLogic(self.hub_frame)
+        self.hub_logic = HubLogic()
         self.destinationbox = tk.Label(self.hub_frame, bg="darkblue")
         self.weather_box = tk.Label(self.hub_frame, bg="darkblue")
         self.news_box = tk.Label(self.hub_frame, bg="darkblue")
         self.currency_box = tk.Label(self.hub_frame, bg="darkblue")
+        self.format_currency = FormatCurrency(self.currency_box)
         self.attractions_box = tk.Label(self.hub_frame,bg="darkblue")
         
     def load_back(self,root):
@@ -52,7 +54,17 @@ class HubUI:
         
         # Currency box ---------------
         self.currency_box.place(relx=0.44,rely=0.2,relheight=0.32,relwidth=0.56)
-        self.hub_logic.setup_currency_code(self.currency_box,country)
+        setup_currency_return = self.hub_logic.setup_currency_code(country)
+        print(setup_currency_return)
+        country = setup_currency_return[0]
+        currency_name = setup_currency_return[1]
+        currency_code = setup_currency_return[2]
+        self.hub_logic.check_currency()
+        get_currency_return = self.hub_logic.get_currency(10,country,currency_name,currency_code)
+        print(get_currency_return)
+        amount = get_currency_return[2]
+        ratesum = get_currency_return[3]
+        self.format_currency.format_all(country,currency_name,amount,ratesum,currency_code)
         
         # Attractions box ---------------
         self.attractions_box.place(relx=0.44,rely=0.52,relwidth=0.56,relheight=0.48)

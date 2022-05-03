@@ -7,8 +7,7 @@ cur_code_location = script_location / 'cur_code_by_a2.txt'
 latest_cur_location = script_location / 'latest_cur.txt'
 
 class HubLogic:
-    def __init__(self,root):
-        self.root = root
+    def __init__(self):
         self.cur_data = {}
         self.rate_data = {}
         self.full_country_name = ""
@@ -65,7 +64,7 @@ class HubLogic:
 
         return return_list
 
-    def get_currency(self,root,amount,country,currency_name,currency_code):
+    def get_currency(self,amount,country,currency_name,currency_code):
         with open (latest_cur_location,"r",encoding="utf8") as rate_file:
             for line in rate_file:
                 split_line = line.split(',')
@@ -76,10 +75,10 @@ class HubLogic:
             rate = self.rate_data[currency_code]
             rate = float(rate.strip('\n'))
             ratesum = amount*rate
-            format_currency = FormatCurrency(root)
-            format_currency.format_all(root,country,currency_name,amount,ratesum,currency_code)
+            return (country,currency_name,amount,ratesum,currency_code)
+            
 
-    def check_currency(self,root,country,currency_name,currency_code):
+    def check_currency(self):
         current_date = datetime.today().strftime('%d-%m-%Y')
         with open (latest_cur_location,'r',encoding="utf8") as checkdate:
             latest=checkdate.readline().split(',')
@@ -87,7 +86,7 @@ class HubLogic:
         # Check if latest request is from same date -------
             if current_date == latest[1].strip('\n'):
                 print("Previous currency data")
-                self.get_currency(root,10,country,currency_name,currency_code)
+                
 
         # If latest request is old, get new one --------
             else:
@@ -103,9 +102,10 @@ class HubLogic:
                         rate = got_currency['rates'][line]
                         w_file.write(f"{line},{rate}")
                         w_file.write('\n')
-                self.get_currency(root,10,country,currency_name,currency_code)
+            
+            #self.get_currency(10,country,currency_name,currency_code)
 
-    def setup_currency_code(self,root,country):
+    def setup_currency_code(self,country):
         with open(cur_code_location,'r',encoding="utf8") as r_file:
             for line in r_file:
                 split_line = line.split(',')
@@ -119,7 +119,8 @@ class HubLogic:
         valid_country_name = self.cur_data[country][0]
         valid_currency_name = self.cur_data[country][1]
         valid_currency_code = self.cur_data[country][2]
-        self.check_currency(root,valid_country_name,valid_currency_name,valid_currency_code)
+        return (valid_country_name,valid_currency_name,valid_currency_code)
+        #self.check_currency(valid_country_name,valid_currency_name,valid_currency_code)
 
     def get_attractions(self,lat,lon,city):
         attractions_key = "5ae2e3f221c38a28845f05b6a26705706c72ab688b5936158c2d8685"

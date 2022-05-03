@@ -2,7 +2,7 @@ import tkinter as tk
 class FormatCurrency:
     def __init__(self,root):
         from logic.hub_logic import HubLogic
-        self.hub_logic = HubLogic(root)
+        self.hub_logic = HubLogic()
         self.amount2= 0
         self.currency_bg = tk.Label(root,bg="lightblue")
         self.currency_text = tk.Label(root,bg="lightblue")
@@ -15,7 +15,7 @@ class FormatCurrency:
     def get_val(self,val):
         self.amount2 = int(val)
 
-    def format_all(self,root,country,currency_name,amount,ratesum,currency_code):
+    def format_all(self,country,currency_name,amount,ratesum,currency_code):
 
         self.currency_bg.place(relx=0,rely=0,relheight=1,relwidth=1)
         self.currency_text.place(relx=0,rely=0,relheight=0.25,relwidth=1)
@@ -34,6 +34,6 @@ class FormatCurrency:
 
         currency_button = tk.Button(self.currency_scale,bg="darkblue",
          text="Exchange",font=("helvetica",15),fg="white",
-         command=lambda:self.hub_logic.get_currency(root,self.amount2,
+         command=lambda:self.hub_logic.get_currency(self.amount2,
          country,currency_name,currency_code))
         currency_button.place(relx=0.65,rely=0.6,relheight=0.3,relwidth=0.3)
