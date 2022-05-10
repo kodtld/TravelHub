@@ -1,3 +1,4 @@
+from tabnanny import check
 import tkinter as tk
 from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
@@ -16,16 +17,44 @@ class HubUI:
         self.weather_box = tk.Label(self.hub_frame, bg="darkblue")
         self.news_box = tk.Label(self.hub_frame, bg="darkblue")
         self.currency_box = tk.Label(self.hub_frame, bg="darkblue")
+        self.currency_bg = tk.Label(self.currency_box,bg="lightblue")
+        self.currency_scale = tk.Scale(self.currency_bg, bg="#7EDCFF",
+         from_=0,to=500,tickinterval=50,length=500,orient="horizontal",command=self.get_val)
+        self.scale_text = tk.Label(self.currency_scale,bg="#7EDCFF",
+         text="Try a different amount!",font=("helvetica",15))
         self.format_currency = FormatCurrency(self.currency_box)
         self.attractions_box = tk.Label(self.hub_frame,bg="darkblue")
-        
+    
+    def get_val(self,val):
+        self.amount2 = int(val)
+
     def load_back(self,root):
         from ui.home_ui import HomeUI
         home_ui = HomeUI(root)
         home_ui.place_home_ui()
 
+    def setup_currency(self,country):
+        setup_currency_return = self.hub_logic.setup_currency_code(country)
+        print(setup_currency_return)
+        self.country = setup_currency_return[0]
+        self.currency_name = setup_currency_return[1]
+        self.currency_code = setup_currency_return[2]
+        self.hub_logic.check_currency()
+        self.get_currency(10,self.country,self.currency_name,self.currency_code)
+    
+    def get_currency(self,amount,country,currency_name,currency_code):
+        get_currency_return = self.hub_logic.get_currency(amount,country,currency_name,currency_code)
+        #print(get_currency_return)
+        amount = get_currency_return[2]
+        ratesum = get_currency_return[3]
+        self.format_currency.format_all(country,currency_name,amount,ratesum,currency_code)
+
     def load_hub_ui(self,lat,lon,city,country):
         self.hub_frame.place(relheight=1,relwidth=1,relx=0,rely=0)
+        self.currency_bg.place(relx=0,rely=0,relheight=1,relwidth=1)
+        self.currency_scale.place(relx=0,rely=0.5,relheight=0.5,relwidth=1)
+        self.scale_text.place(relx=0.0125,rely=0.6,relheight=0.3,relwidth=0.3)
+
         # Destination box ---------------
         self.destinationbox.place(relx=0, rely=0, relwidth=0.3, relheight=0.2)
         self.destinationtext = tk.Label(self.destinationbox, text=f"{city}, {country}", font=(
@@ -54,17 +83,13 @@ class HubUI:
         
         # Currency box ---------------
         self.currency_box.place(relx=0.44,rely=0.2,relheight=0.32,relwidth=0.56)
-        setup_currency_return = self.hub_logic.setup_currency_code(country)
-        #print(setup_currency_return)
-        country = setup_currency_return[0]
-        currency_name = setup_currency_return[1]
-        currency_code = setup_currency_return[2]
-        self.hub_logic.check_currency()
-        get_currency_return = self.hub_logic.get_currency(10,country,currency_name,currency_code)
-        #print(get_currency_return)
-        amount = get_currency_return[2]
-        ratesum = get_currency_return[3]
-        self.format_currency.format_all(country,currency_name,amount,ratesum,currency_code)
+        self.setup_currency(country)
+        
+        currency_button = tk.Button(self.currency_scale,bg="darkblue",
+         text="Exchange",font=("helvetica",15),fg="white",
+         command=lambda:self.get_currency(self.amount2,
+         self.country,self.currency_name,self.currency_code))
+        currency_button.place(relx=0.65,rely=0.6,relheight=0.3,relwidth=0.3)
         
         # Attractions box ---------------
         self.attractions_box.place(relx=0.44,rely=0.52,relwidth=0.56,relheight=0.48)
