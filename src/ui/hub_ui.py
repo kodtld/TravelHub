@@ -1,4 +1,3 @@
-from tabnanny import check
 import tkinter as tk
 from api_format.hub_format_weather import FormatWeather
 from api_format.hub_format_news import FormatNews
@@ -8,11 +7,8 @@ from logic.hub_logic import HubLogic
 class HubUI:
     def __init__(self,root):
         self.root = root
-        self.format_weather = FormatWeather()
-        self.format_news = FormatNews()
-        self.format_attractions = FormatAttractions()
+
         self.hub_frame = tk.Label(self.root, bg="lightblue")
-        self.hub_logic = HubLogic()
         self.destinationbox = tk.Label(self.hub_frame, bg="darkblue")
         self.weather_box = tk.Label(self.hub_frame, bg="darkblue")
         self.news_box = tk.Label(self.hub_frame, bg="darkblue")
@@ -22,8 +18,13 @@ class HubUI:
          from_=0,to=500,tickinterval=50,length=500,orient="horizontal",command=self.get_val)
         self.scale_text = tk.Label(self.currency_scale,bg="#7EDCFF",
          text="Try a different amount!",font=("helvetica",15))
-        self.format_currency = FormatCurrency(self.currency_box)
         self.attractions_box = tk.Label(self.hub_frame,bg="darkblue")
+        
+        self.hub_logic = HubLogic()
+        self.format_weather = FormatWeather()
+        self.format_news = FormatNews()
+        self.format_attractions = FormatAttractions()
+        self.format_currency = FormatCurrency(self.currency_box)    
     
     def get_val(self,val):
         self.amount2 = int(val)
@@ -47,7 +48,7 @@ class HubUI:
         #print(get_currency_return)
         amount = get_currency_return[2]
         ratesum = get_currency_return[3]
-        self.format_currency.format_all(country,currency_name,amount,ratesum,currency_code)
+        self.format_currency.format_all(country,currency_name,amount,ratesum)
 
     def load_hub_ui(self,lat,lon,city,country):
         self.hub_frame.place(relheight=1,relwidth=1,relx=0,rely=0)
