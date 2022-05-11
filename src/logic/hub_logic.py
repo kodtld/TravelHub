@@ -62,7 +62,7 @@ class HubLogic:
                 link = ""
                 return_list[i] = []
                 return_list[i] = [{'title':title,'source':source,'link':link}]
-
+        print(return_list)
         return return_list
 
     def get_currency(self,amount,country,currency_name,currency_code):
@@ -151,5 +151,5 @@ class HubLogic:
 
             return_list[i] = []
             return_list[i] = [{'name':name,'dist':dist,'tags':tags,'link':wiki_link}]
-        print(return_list)
+
         return return_list

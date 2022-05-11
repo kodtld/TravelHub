@@ -7,11 +7,12 @@ class Testget_Weather(unittest.TestCase):
         self.assertEqual(HubLogic.get_weather(self,321,1233132),
                          "None")
 
-#class Testget_News(unittest.TestCase):
+class Testget_News(unittest.TestCase):
 
-#    def test_invalid_insert(self):
-#        self.assertEqual(HubLogic.get_weather(self,321,1233132),
-#                         "None")
+    def test_invalid_insert(self):
+        self.assertEqual(HubLogic.get_news(self,"Xichuan"),
+                         {0: [{'title': "Couldn't find more news...", 'source': '', 'link': ''}], 1: [{'title': "Couldn't find more news...", 'source': '', 'link': ''}], 2: [{'title': "Couldn't find more news...", 'source': '', 'link': ''}], 3: 
+                         [{'title': "Couldn't find more news...", 'source': '', 'link': ''}]})
 
 #class Testget_Currency(unittest.TestCase):
 
