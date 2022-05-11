@@ -70,6 +70,7 @@ class HubUI:
         # Weather box ---------------
         self.weather_box.place(relx=0.3, rely=0, relwidth=0.7, relheight=0.2)
         weather_return = self.hub_logic.get_weather(lat,lon)
+        print(weather_return)
         for i in weather_return:
             self.format_weather.form_weather(self.weather_box,weather_return[i][0]['weather'],weather_return[i][0]['weather_min'],weather_return[i][0]['date'],weather_return[i][0]['icon'],i)
         

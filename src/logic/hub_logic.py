@@ -22,19 +22,21 @@ class HubLogic:
         request_weather = requests.get(weather_call)
         got_weather = request_weather.json()
         return_list = {}
-
-        for i in range(0,5):
-            current_weather = got_weather['daily'][i]['temp']['day']
-            current_weather_min = got_weather['daily'][i]['temp']['min']
-            current_date = datetime.utcfromtimestamp(
-             got_weather['daily'][i]['dt']).strftime('%d-%m')
-            current_icon_for_call = (got_weather['daily'][i]['weather'][0]['icon'])
-            current_iconcall = f"http://openweathermap.org/img/wn/{current_icon_for_call}@2x.png"
-            return_list[i] = []
-            return_list[i] += [{'weather':current_weather,
-             'weather_min':current_weather_min,
-             'date':current_date,
-             'icon':current_iconcall}]
+        try:
+            for i in range(0,5):
+                current_weather = got_weather['daily'][i]['temp']['day']
+                current_weather_min = got_weather['daily'][i]['temp']['min']
+                current_date = datetime.utcfromtimestamp(
+                got_weather['daily'][i]['dt']).strftime('%d-%m')
+                current_icon_for_call = (got_weather['daily'][i]['weather'][0]['icon'])
+                current_iconcall = f"http://openweathermap.org/img/wn/{current_icon_for_call}@2x.png"
+                return_list[i] = []
+                return_list[i] += [{'weather':current_weather,
+                'weather_min':current_weather_min,
+                'date':current_date,
+                'icon':current_iconcall}]
+        except (KeyError,IndexError):
+            return_list = "None"
 
         return return_list
 
@@ -99,7 +101,7 @@ class HubLogic:
                         rate = got_currency['rates'][line]
                         w_file.write(f"{line},{rate}")
                         w_file.write('\n')
-
+                    w_file.write(f"ZAF,{17.01}")
             #self.get_currency(10,country,currency_name,currency_code)
 
     def setup_currency_code(self,country):
@@ -149,5 +151,5 @@ class HubLogic:
 
             return_list[i] = []
             return_list[i] = [{'name':name,'dist':dist,'tags':tags,'link':wiki_link}]
-
+        print(return_list)
         return return_list
