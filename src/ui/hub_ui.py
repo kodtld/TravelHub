@@ -36,7 +36,6 @@ class HubUI:
 
     def setup_currency(self,country):
         setup_currency_return = self.hub_logic.setup_currency_code(country)
-        print(setup_currency_return)
         self.country = setup_currency_return[0]
         self.currency_name = setup_currency_return[1]
         self.currency_code = setup_currency_return[2]
@@ -70,7 +69,7 @@ class HubUI:
         # Weather box ---------------
         self.weather_box.place(relx=0.3, rely=0, relwidth=0.7, relheight=0.2)
         weather_return = self.hub_logic.get_weather(lat,lon)
-        print(weather_return)
+        
         for i in weather_return:
             self.format_weather.form_weather(self.weather_box,weather_return[i][0]['weather'],weather_return[i][0]['weather_min'],weather_return[i][0]['date'],weather_return[i][0]['icon'],i)
         
@@ -86,7 +85,6 @@ class HubUI:
         # Currency box ---------------
         self.currency_box.place(relx=0.44,rely=0.2,relheight=0.32,relwidth=0.56)
         self.setup_currency(country)
-        
         currency_button = tk.Button(self.currency_scale,bg="darkblue",
          text="Exchange",font=("helvetica",15),fg="white",
          command=lambda:self.get_currency(self.amount2,

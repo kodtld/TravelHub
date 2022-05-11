@@ -37,7 +37,7 @@ class HubLogic:
                 'icon':current_iconcall}]
         except (KeyError,IndexError):
             return_list = "None"
-
+        print(len(return_list))
         return return_list
 
     def get_news(self,city):
@@ -62,7 +62,7 @@ class HubLogic:
                 link = ""
                 return_list[i] = []
                 return_list[i] = [{'title':title,'source':source,'link':link}]
-        print(return_list)
+        
         return return_list
 
     def get_currency(self,amount,country,currency_name,currency_code):
