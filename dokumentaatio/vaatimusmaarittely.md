@@ -2,18 +2,21 @@
 
 ## Sovelluksen perusidea
 Sovellus tarjoaa katsauksen käyttäjän valitsemaan matkustuskohteeseen. 
-Tämä katsaus sisältää kohteen valuuttakurssin/muuntajan *TEHTY*, kohteen sää-ennusteen *TEHTY* tulevilta päiviltä, viimeisemmät uutiset kohteesta *TEHTY*,
-sekä tiedot kohteen nähtävyyksistä *TEHTY*.
+Tämä katsaus sisältää kohteen valuuttakurssin/muuntajan, kohteen sää-ennusteen tulevilta päiviltä, viimeisemmät uutiset kohteesta,
+sekä tiedot kohteen nähtävyyksistä.
 
 ## Käyttöliittymä
 ### Home page
 Sovellus aukeaa "Home page" näkymään jossa olevaan syötekenttään käyttäjä syöttää halutun kohdekaupungin. Mikäli syöte ei vastaa oikeaa kaupunkia, pyytää sovellus uutta syötettä.
+Mikäli syöte on validi, avaa "Take me there!" painike seuraavan näkymän joka näyttää tiedot kohteesta.
 
 ![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Home_page.png)
 
 ### HUB page
-Sovellus koostuu kahdesta näkymästä *TEHTY*. Ensimmäisessä näkymässä valitaan matkustuskohde.
-Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisiin lähteisiin. *TEHTY*
+Toinen näkymä, HUB page, näyttää tiedot käyttäjän syöttämästä kohteesta. HUB page sisältää linkkejä ulkoisiin lähteisiin kuten uutisiin ja nähtävyyksiin. Sivulta on myös nähtävissä kohteen seuraavien päivien sääennuste, sekä valuuttamuuntaja paikallisen valuutan ja Euron välillä.
+"Return" painiketta painamalla käyttäjä pääsee takaisin aloitus-sivulle, jossa hän voi syöttää uuden kohteen.
+
+![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/HUB_page.png)
 
 ## Sovelluksen toiminnallisuus
 Sovelluksen tämänhetkinen toiminnallisuus:
