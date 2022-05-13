@@ -1,7 +1,7 @@
 import tkinter as tk
+from logic.hub_logic import HubLogic
 class FormatCurrency:
     def __init__(self,root):
-        from logic.hub_logic import HubLogic
         self.hub_logic = HubLogic()
         self.amount2= 0
         self.currency_text = tk.Label(root,bg="lightblue")
