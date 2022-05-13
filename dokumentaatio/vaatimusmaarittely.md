@@ -21,18 +21,19 @@ Toinen näkymä, HUB page, näyttää tiedot käyttäjän syöttämästä kohtee
 ## Sovelluksen toiminnallisuus
 Sovelluksen tämänhetkinen toiminnallisuus:
 - Etusivu
-  - Käyttäjä syöttää validin kohde-kaupungin.*TEHTY*
-  - Mikäli kohde ei ole validi, pyytää ohjelma uutta syötettä *TEHTY*
+  - Tarjoaa syötekentän, johon käyttäjä voi syöttää toivomansa kohde-kaupungin.
+  - Mikäli syöte ei ole validi (numeroita tai olematon kaupunki), pyytää ohjelma uutta syötettä.
 - Sisältösivu
-  - Käyttäjä voi syöttää arvoja valuuttamuuntajaan. *TEHTY*
-  - Käyttäjä näkee kohteen uutiset *TEHTY*, nähtävyydet *TEHTY* (alkuperäinen suunnitelma oli lennot, mutta sopivaa API:ta ei löytynyt), Valuuttamuuntajan *TEHTY*, sekä sään *TEHTY*. (Uutiset, sekä nähtävyydet sisältävät linkit ulkoisiin lähteisiin).
-  - Sisältösivulta pääsee "return" painikkeella takaisin etusivulle. *TEHTY*
+  - Käyttäjä voi syöttää arvoja valuuttamuuntajaan.
+  - Käyttäjä näkee kohteen uutiset, suositut nähtävyydet lähellä keskustaa, valuuttamuuntajan, sekä sääennusteen. (Uutiset, sekä nähtävyydet sisältävät linkit ulkoisiin lähteisiin).
+  - Sisältösivulta pääsee "return" painikkeella takaisin etusivulle.
 
 ## Jatkokehitysideoita
 Sovelluksen toiminta perustuu eri API rajapintojen höydyntämiseen. Tämänhetkinen versio rakentuu näiden ilmaisversiohin,
 joissa toiminnallisuus/ominaisuudet ovat rajattuja. Tulevaisuudessa ohjelman toimintaa voisi laajentaa monin tavoin.
 
 - Historiallisen säädatan näyttäminen esim. edellisen vuoden vastaavien päivien säästä.
+- Edulliset lennot kohteeseen.
 - Lisätä maakohtaiset uutislähteet, sen sijaan että hakee vain suurimpien englanninkielisten uutislähteiden julkaisut.
 - Lisätä kohteen suositut ja vapaat hotellit/AirBnb:t valituille päiville.
 - Mahdollisuus vertailla matkakohteita keskenään.
