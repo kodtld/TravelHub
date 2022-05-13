@@ -28,8 +28,8 @@ class HubLogic:
                 current_weather_min = got_weather['daily'][i]['temp']['min']
                 current_date = datetime.utcfromtimestamp(
                 got_weather['daily'][i]['dt']).strftime('%d-%m')
-                current_icon_for_call = (got_weather['daily'][i]['weather'][0]['icon'])
-                current_iconcall = f"http://openweathermap.org/img/wn/{current_icon_for_call}@2x.png"
+                curr_icon_for_call = (got_weather['daily'][i]['weather'][0]['icon'])
+                current_iconcall = f"http://openweathermap.org/img/wn/{curr_icon_for_call}@2x.png"
                 return_list[i] = []
                 return_list[i] += [{'weather':current_weather,
                 'weather_min':current_weather_min,
@@ -84,11 +84,10 @@ class HubLogic:
 
         # Check if latest request is from same date -------
             if current_date == latest[1].strip('\n'):
-                print("Previous currency data")
+                pass
 
         # If latest request is old, get new one --------
             else:
-                print("New currency request")
                 curre_key = "dec91b528e3e153051ddb55d9c26f488"
                 currency_call = f"http://data.fixer.io/api/latest?access_key={curre_key}&base=EUR"
                 request_currency = requests.get(currency_call)
@@ -101,7 +100,7 @@ class HubLogic:
                         w_file.write(f"{line},{rate}")
                         w_file.write('\n')
                     w_file.write(f"ZAF,{17.01}")
-            #self.get_currency(10,country,currency_name,currency_code)
+
 
     def setup_currency_code(self,country):
         with open(cur_code_location,'r',encoding="utf8") as r_file:
@@ -117,7 +116,6 @@ class HubLogic:
         valid_country_name = self.cur_data[country][0]
         valid_currency_name = self.cur_data[country][1]
         valid_currency_code = self.cur_data[country][2]
-        print (valid_country_name,valid_currency_name,valid_currency_code)
         return (valid_country_name,valid_currency_name,valid_currency_code)
         #self.check_currency(valid_country_name,valid_currency_name,valid_currency_code)
 
