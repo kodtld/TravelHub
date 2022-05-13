@@ -9,11 +9,11 @@ sekä tiedot kohteen nähtävyyksistä *TEHTY*.
 ### Home page
 Sovellus aukeaa "Home page" näkymään jossa olevaan syötekenttään käyttäjä syöttää halutun kohdekaupungin. Mikäli syöte ei vastaa oikeaa kaupunkia, pyytää sovellus uutta syötettä.
 
+![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Home_page.png)
+
 ### HUB page
 Sovellus koostuu kahdesta näkymästä *TEHTY*. Ensimmäisessä näkymässä valitaan matkustuskohde.
 Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisiin lähteisiin. *TEHTY*
-
-![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kayttoliittyma_draft.png)
 
 ## Sovelluksen toiminnallisuus
 Sovelluksen tämänhetkinen toiminnallisuus:
