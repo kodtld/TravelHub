@@ -5,7 +5,11 @@ Sovellus tarjoaa katsauksen käyttäjän valitsemaan matkustuskohteeseen.
 Tämä katsaus sisältää kohteen valuuttakurssin/muuntajan *TEHTY*, kohteen sää-ennusteen *TEHTY* tulevilta päiviltä, viimeisemmät uutiset kohteesta *TEHTY*,
 sekä tiedot kohteen nähtävyyksistä *TEHTY*.
 
-## Käyttöliittymäluonnos
+## Käyttöliittymä
+### Home page
+Sovellus aukeaa "Home page" näkymään jossa olevaan syötekenttään käyttäjä syöttää halutun kohdekaupungin. Mikäli syöte ei vastaa oikeaa kaupunkia, pyytää sovellus uutta syötettä.
+
+### HUB page
 Sovellus koostuu kahdesta näkymästä *TEHTY*. Ensimmäisessä näkymässä valitaan matkustuskohde.
 Toinen näkymä näyttää tiedot kohteesta, sekä sisältää linkkejä ulkoisiin lähteisiin. *TEHTY*
 
