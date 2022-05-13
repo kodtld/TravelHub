@@ -28,4 +28,8 @@
 | 3.5 | 1   | Get_attractions rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
 | 3.5 | 0.2   | Return button siiretty pois logiikasta  |
 | 3.5 | 0.4   | Get_Currency rakenteen muutos ja siistiminen/ sovelluslogiikan ja ui:n erottelemista  |
-| Yht. |  45  |    |
+| 10.5 | 1.5   | Valuuttamuunnoksen uudellenhakeminen korjattu reformatoinnin jäljiltä  |
+| 11.5 | 0.5   | Testien kirjoittamista  |
+| 12.5 | 0.5   | Testien kirjoittamista  |
+| 13.5 | 1.5   | Testien kirjoittamista ja pylint korjauksia  |
+| Yht. |  49  |    |
