@@ -37,7 +37,6 @@ class HubLogic:
                 'icon':current_iconcall}]
         except (KeyError,IndexError):
             return_list = "None"
-        print(len(return_list))
         return return_list
 
     def get_news(self,city):
@@ -62,7 +61,7 @@ class HubLogic:
                 link = ""
                 return_list[i] = []
                 return_list[i] = [{'title':title,'source':source,'link':link}]
-        
+
         return return_list
 
     def get_currency(self,amount,country,currency_name,currency_code):
@@ -118,6 +117,7 @@ class HubLogic:
         valid_country_name = self.cur_data[country][0]
         valid_currency_name = self.cur_data[country][1]
         valid_currency_code = self.cur_data[country][2]
+        print (valid_country_name,valid_currency_name,valid_currency_code)
         return (valid_country_name,valid_currency_name,valid_currency_code)
         #self.check_currency(valid_country_name,valid_currency_name,valid_currency_code)
 
@@ -151,5 +151,4 @@ class HubLogic:
 
             return_list[i] = []
             return_list[i] = [{'name':name,'dist':dist,'tags':tags,'link':wiki_link}]
-
         return return_list
