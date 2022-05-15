@@ -144,3 +144,33 @@ Alla ohjelman kutsulogiikka kokonaisuudessaan:
 ```
 
 ## Tiedon tallennus
+
+API tietokantojen lisäksi ohjelma hyödyntää kahta sisäistä tekstitiedostoihin tallennettua tietokantaa.
+
+### latest_cur.txt
+
+Sisältää tiedon viimeisestä suoritetusta API kutsusta formaatissa:
+
+```
+Latest_request,DD-MM-YYYY 
+``` 
+
+Sekä viimeisen suoritetun kutsun palautuksen, joka sisältää valuuttakoodit ja niiden suhteen Euron hintaan formaatissa:
+
+```
+AED,3.823892
+AFN,91.614523
+ALL,120.608353
+...
+```
+
+### cur_code_by_a2.txt
+
+Sisältää maiden virallisen nimen, a2 koodin (kaksinumeroinen maakoodi joka vastaa HomeLogicin palauttamaa maakoodia, ja jonka avulla kyseisen maan valuuttakoodi saadaan), maan valuutan nimen, sekä maan valuuttakoodin formaatissa:
+
+```
+Afghanistan,AF,Afghani,AFN	
+Albania,AL,Lek,ALL
+Algeria,DZ,Algerian Dinar,DZD
+...
+```
