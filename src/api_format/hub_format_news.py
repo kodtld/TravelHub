@@ -3,10 +3,23 @@ import tkinter as tk
 import webbrowser
 
 class FormatNews:
+    """ Formats news stories and opens links
+    """
     def open_web(self,link):
+        """ Opens passed linked in web browser
+        """
         webbrowser.open(link,new=new)
 
     def form_news(self,root,title,source,link,i):
+        """ In charge of placement of passed elements for UI
+
+        Args:
+            root: where to be formatted
+            title: title of news
+            source: source of news
+            link: link of news
+            i: index
+        """
         y_val = (i+1)*0.2
         news_box = tk.Label(root, bg="darkblue")
         news_box_cont = tk.Label(news_box,bg="lightblue")

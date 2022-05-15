@@ -3,6 +3,8 @@ from urllib.request import urlopen
 from PIL import ImageTk
 
 class FormatWeather:
+    """ Formats weather response for HUB UI, and loads corresponding weather icons
+    """
     def form_weather(self,root,weather,weather_min,date,icon,i):
         self.current_box = tk.Label(root, bg="darkblue")
         x_val = i*0.2

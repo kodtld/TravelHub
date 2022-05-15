@@ -3,10 +3,22 @@ import tkinter as tk
 import webbrowser
 
 class FormatAttractions:
+    """ Formats attractions and opens links
+    """
     def open_web(self,link):
         webbrowser.open(link,new=new)
 
     def form_att(self,root,name,dist,tags,wiki_link,i):
+        """ In charge of placement of passed elements for UI
+
+        Args:
+            root: where the formatting takes place
+            name: name of attraction
+            dist: distance from city center
+            tags: category of attraction
+            wiki_link: wikidata link for attraction
+            i: index
+        """
         one_box = tk.Label(root,bg="darkblue")
         x_val = i*0.3333
         one_box.place(relwidth=0.3333,relheight=0.6575,relx=x_val,rely=0.34)
