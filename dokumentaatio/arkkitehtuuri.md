@@ -10,9 +10,6 @@ Saatuaan palautuksen **Logic** pakkaukselta, **UI** kutsuu **API Format** pakkau
 
 ## Sovelluslogiikka
 
-## Tiedon tallennus
-
-
 ```mermaid
  classDiagram
       
@@ -21,14 +18,13 @@ Saatuaan palautuksen **Logic** pakkaukselta, **UI** kutsuu **API Format** pakkau
       HomeLogic <|-- HomeUI
       HomeUI <|-- HubUI
       HubLogic <|-- HubUI
+      HubLogic -- Latest_cur_txt
+      HubLogic -- Cur_code_by_a2_txt
       HubUI ..	HomeUI
       HubUI <|-- FormatWeather
       HubUI <|-- FormatNews
       HubUI <|-- FormatAttractions
       HubUI <|-- FormatCurrency
-      FormatCurrency .. HubUI
-      FormatCurrency -- Latest_cur_txt
-      FormatCurrency -- Cur_code_by_a2_txt
 
        
       Index : LoadMainframe()
@@ -130,3 +126,5 @@ Saatuaan palautuksen **Logic** pakkaukselta, **UI** kutsuu **API Format** pakkau
 
          }
 ```
+
+## Tiedon tallennus
