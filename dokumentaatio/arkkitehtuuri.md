@@ -186,12 +186,12 @@ sequenceDiagram
   actor User
   participant Home_UI
   participant Home_Logic
+  participant Hub_UI
+  participant Hub_Logic
   participant Format_Weather
   participant Format_News
   participant Format_Currency
   participant Format_Attractions
-  participant Hub_UI
-  participant Hub_Logic
   participant latest_cur.txt
   participant cur_code_by_a2.txt
   User->>Home_UI: Type location and press "Take me there!" button.
@@ -208,8 +208,12 @@ sequenceDiagram
   Hub_UI->>Format_News: format_news(news_data)
 
   Hub_UI->>Hub_Logic: setup_currency_code(country)
+  Hub_Logic->>cur_code_by_a2.txt: a2 country code
+  cur_code_by_a2.txt-->>Hub_Logic: country, currency_name, currency_code
   Hub_Logic-->>Hub_UI: coutry, currency_name, currency_code
   Hub_UI->>Hub_Logic: check_currency()
+  Hub_Logic->>lates_cur.txt: datetime current date, currency_code
+  latest_cur.txt-->>Hub_Logic: currency_code, exchange_rate
   Hub_Logic-->>Hub_UI: latest_cur.txt
   Hub_UI->Hub_Logic: get_currency(amount, country, currency_name, currency_code)
   Hub_Logic-->>Hub_UI: exchange_rate
