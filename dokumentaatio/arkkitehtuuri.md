@@ -8,7 +8,19 @@ Saatuaan palautuksen **Logic** pakkaukselta, **UI** kutsuu **API Format** pakkau
 
 ![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/pack.png)
 
+## Käyttöliittymä
+
+Käyttöliittymä sisältää kaksi näkymää, ensimmäisessä näkymässä syötetään kohdekaupunki, toisessa ns. "päänäkymässä" on tiedot kohteesta. Päänäkymä sisältää myös linkkejä ulkoisiin lähteisiin.
+
 ## Sovelluslogiikka
+
+Sovelluksen toiminta perustuu kahden UI tiedoston lähettämiin kutsuihin. Home UI kutsuu HomeLogic tiedostoa saadakseen kohdekaupungin korkeus ja leveyspiirit, mikäli HomeLogic API kutsu epäonnistuu, pyydetään käyttäjältä uutta syötettä. Mikäli kutsu on suotuisa, antaa HomeUI palautuksen HUBUI:lle tätä kutsuessaan.
+
+HUBUI taas kutsuu HUBLogic tiedostoa, joka vastaa HUB sivun API kutsuita, ja muusta logiikasta. HUBLogic hakee tarpeelliset tiedot API kutsuilla, mutta valuuttakurssien kohdalla suoritetaan ensin kutsu cur_code_by_a2.txt tiedostoon, joka palauttaa kohdemaan valuuttakoodin HomeLogic(get_geocode) funktion palauttaman maakoodin pohjalta. Kun valuuttakoodi on haettu, suoritetaan tarkistus viimeisen API kutsun päivämäärästä.
+
+Mikäli viimeinen valuuttakutsu on yli päivän vanha, lähetetään uusi API kutsu, jonka palautus kirjoitetaan kyseisen päivämäärän kanssa latest_cur.txt tiedostoon.   
+
+
 
 ```mermaid
  classDiagram
@@ -71,7 +83,8 @@ Saatuaan palautuksen **Logic** pakkaukselta, **UI** kutsuu **API Format** pakkau
           get_weather(root,lat,long)
   	  get_news(root,cityname)
           get_currency()
-	  get_attractions()  
+	  get_attractions()
+	  Write and read files()  
           
          }
 
