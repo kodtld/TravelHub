@@ -1,3 +1,16 @@
+# Sovellusarkkitehtuuri
+
+## Rakenne
+
+**UI** vastaa käyttöliittymästä, se sisältää myös kutsut **Logic** pakkaukseen, joka vastaa API kutsuista, sekä muista sovelluslogiikan operaatioista. **Logic** pakkaus käyttää hyväkseen **Data Files** pakkauksen sisältämiä tiedostoja, jossa säilytetään tietoa valuuttakursseista, sekä tietoa viimeisen kutsun päivämäärästä. Saatuaan palautuksen **Logic** pakkaukselta, kutsuu **UI** **API Format** pakkausta, joka vastaa API kutsujen palautteen asettelusta yms.
+
+![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/pack.png)
+
+## Sovelluslogiikka
+
+## Tiedon tallennus
+
+
 ```mermaid
  classDiagram
       
