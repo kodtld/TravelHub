@@ -16,7 +16,7 @@ Käyttöliittymä sisältää kaksi näkymää, ensimmäisessä näkymässä sy�
 
 Sovelluksen toiminta perustuu kahden UI tiedoston lähettämiin kutsuihin. Home UI kutsuu HomeLogic tiedostoa saadakseen kohdekaupungin korkeus ja leveyspiirit, mikäli HomeLogic API kutsu epäonnistuu, pyydetään käyttäjältä uutta syötettä. Mikäli kutsu on suotuisa, antaa HomeUI palautuksen HUBUI:lle tätä kutsuessaan.
 
-HUBUI taas kutsuu HUBLogic tiedostoa, joka vastaa HUB sivun API kutsuita, ja muusta logiikasta. HUBLogic hakee tarpeelliset tiedot API kutsuilla ja palauttaa ne HUBUI tiedostolle, mutta valuuttakurssien kohdalla suoritetaan ensin kutsu cur_code_by_a2.txt tiedostoon, joka palauttaa kohdemaan valuuttakoodin HomeLogic(get_geocode) funktion palauttaman maakoodin pohjalta. Kun valuuttakoodi on haettu, suoritetaan tarkistus viimeisen API kutsun päivämäärästä.
+HUBUI taas kutsuu HUBLogic tiedostoa, joka vastaa HUB sivun API kutsuita ja muusta logiikasta. HUBLogic hakee tarpeelliset tiedot API kutsuilla ja palauttaa ne HUBUI tiedostolle. Valuuttakurssien kohdalla suoritetaan ensin kutsu cur_code_by_a2.txt tiedostoon, joka palauttaa kohdemaan valuuttakoodin HomeLogic(get_geocode) funktion palauttaman maakoodin pohjalta. Kun valuuttakoodi on haettu, suoritetaan tarkistus viimeisen API kutsun päivämäärästä.
 
 Mikäli viimeinen valuuttakutsu on yli päivän vanha, lähetetään uusi API kutsu, jonka palautus kirjoitetaan kyseisen päivämäärän kanssa latest_cur.txt tiedostoon. Tämän jälkeen lates_cur.txt tiedostosta haetaan kohdemaan valuutakurssi Euroon nähden, jonka jälkeen se palautetaan HUBUI:lle.
 
