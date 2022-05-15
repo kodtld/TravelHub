@@ -4,6 +4,7 @@ from api_format.hub_format_news import FormatNews
 from api_format.hub_format_attractions import FormatAttractions
 from api_format.hub_format_currency import FormatCurrency
 from logic.hub_logic import HubLogic
+
 class HubUI:
     """ Class is responsible for initializing and loading the UI of HUB page.
 

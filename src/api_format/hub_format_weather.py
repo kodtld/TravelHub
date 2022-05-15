@@ -9,7 +9,6 @@ class FormatWeather:
         self.current_box = tk.Label(root, bg="darkblue")
         x_val = i*0.2
 
-        # Current weather box -------------------------------------------------
         self.current_box.place(relx=x_val, rely=0, relwidth=0.2, relheight=1)
         current_weather_day_text = tk.Label(
             self.current_box, text=f"Daily average: {weather}°C",
@@ -23,7 +22,6 @@ class FormatWeather:
         current_weather_min_text.place(rely=0.7, relheight=0.15, relwidth=1)
         current_date_text.place(rely=0.85, relheight=0.15, relwidth=1)
 
-        # Current weather icon
         with urlopen(icon) as current_u:
             current_raw_data = current_u.read()
             current_u.close()
