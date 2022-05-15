@@ -227,7 +227,7 @@ sequenceDiagram
 
 ### Return
 
-Kun HUB sivulla painetaan "return" painiketta, latautuu etusivu takaisin seuraavasti:
+Kun HUB sivulla painetaan "Return" painiketta, latautuu etusivu takaisin seuraavasti:
 
 ```mermaid
 sequenceDiagram
