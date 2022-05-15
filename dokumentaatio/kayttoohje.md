@@ -33,8 +33,22 @@ poetry run invoke start
 
 ![](./kuvat/HUB_page.png)
 
-- "Return" painike palaa etusivulle (merkitty vihreällä)
-- "Visit article" painikkeet avaavat kyseisen uutisen selaimeen (merkitty punaisella)
-- "Veto-valikko" ja "Exchange" painike mahdollistavat erinäisten rahasummien vertaamisen Euron kurssiin (merkitty purppuralla)
-- "Location data" painikkeet avaavat nähtävyyksien wikidata artikkelit (merkitty keltaisella) 
+#### Return
+"Return" painike palaa etusivulle.
+![](./kuvat/HUB_page_return.png)
 
+#### Weather
+Weather osio näyttää kohteen viiden päivän sää-ennusteen.
+![](./kuvat/HUB_page_weather.png)
+
+#### News
+News osio näyttää viimeisimmät uutiset kohteesta. "Visit article" painikkeet avaavat kyseisen uutisen selaimeen.
+![](./kuvat/HUB_page_news.png)
+
+#### Currency
+Currency osio näyttää kohdemaan valuuttakurssin Euroon verrattuna. "Slideria" vetämällä voi vaihtaa oletusarvoa (10€), ja "Exchange" nappia painamalla käyttäjä näkee valitsemansa summan paikallisena valuuttana.
+![](./kuvat/HUB_page_currency.png)
+
+#### Attractions
+Attractions osio näyttää kohteen suositut nähtävyyden 10km säteellä keskustasta. "Location data" painikkeet avaavat nähtävyyksien wikidata-artikkelit. 
+![](./kuvat/HUB_page_attractions.png)
