@@ -13,10 +13,8 @@ class FormatNews:
         news_box.place(relx=0,rely=y_val,relwidth=1,relheight=0.2)
         news_box_cont.place(relheight=1,relwidth=1,relx=0)
 
-        if len(title) > 110:
-            f_size = 6
         if len(title) > 100:
-            f_size = 8
+            f_size = 6.5
         if len(title) > 80:
             f_size = 12
         else:
