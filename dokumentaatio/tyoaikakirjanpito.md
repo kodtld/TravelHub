@@ -32,4 +32,5 @@
 | 11.5 | 0.5   | Testien kirjoittamista  |
 | 12.5 | 0.5   | Testien kirjoittamista  |
 | 13.5 | 1.5   | Testien kirjoittamista ja pylint korjauksia  |
-| Yht. |  49  |    |
+| 15.5 | 4   | Lopullinen dokumentaatio (arkkitehtuurikuvaus, testitiedosto, docstring, yms.)  |
+| Yht. |  53  |    |
