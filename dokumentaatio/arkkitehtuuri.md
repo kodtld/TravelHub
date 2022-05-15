@@ -216,8 +216,8 @@ sequenceDiagram
   latest_cur.txt-->>Hub_Logic: currency_code, exchange_rate
   Hub_Logic-->>Hub_UI: latest_cur.txt
   Hub_UI->Hub_Logic: get_currency(amount, country, currency_name, currency_code)
-  Hub_Logic-->>Hub_UI: exchange_rate
-  Hub_UI->>Format_Currency: format_currency(country, currency_name, amount, exhange_rate)
+  Hub_Logic-->>Hub_UI: exchange_rate_sum
+  Hub_UI->>Format_Currency: format_currency(country, currency_name, amount, exhange_rate_sum)
 
   Hub_UI->>Hub_Logic: get_attractions(latitude, longitude, cityname)
   Hub_Logic-->>Hub_UI: attractions_data
@@ -260,6 +260,6 @@ sequenceDiagram
   Hub_UI->>Hub_UI.get_currency: get_currency(value2, country, currency_name, currency_code)
   Hub_UI->>Hub_Logic: get_currency(value2, country, currency_name, currency_code)
   Hub_Logic-->>Hub_UI: country, currency_name, amount, exchange_rate, currency_code
-  Hub_UI->>Format_Currency(country, currency_name, amount, exhange_rate)
+  Hub_UI->>Format_Currency: format_currency(country, currency_name, amount, exhange_rate_sum)
 
 ```
