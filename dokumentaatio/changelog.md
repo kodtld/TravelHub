@@ -40,3 +40,12 @@
 - Kutsumarakenne muuttunut, pian logiikka täysin erillään UI:sta
 - Get_News formatointia hieman kehitetty jotta pidemmät uutiset mahtuvat ruudulle paremmin
 - Format_Currency osalta eroteltu UI ja logiikka (tästä aiheutui ongelma, jossa valuuttamuunnoksen haku uudestaan ei onnistu)((korjataan mahdollisimman pian))
+
+## Viikko 7
+
+- Loppusilaus tehty
+- Koodia siistitty (pylint)
+- Lopulliset testit kirjoitettu
+- Sovellus toimii täysin
+- Lopullinen dokumentaatio
+
