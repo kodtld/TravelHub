@@ -238,4 +238,5 @@ sequenceDiagram
   User->>Hub_UI: Press "return" button.
   Hub_UI->>Hub_UI: self.load_back()
   Hub_UI->>Home_UI: home_ui.place_ui()
+  Home_UI->>Home_UI: load_home_ui()
 ```
