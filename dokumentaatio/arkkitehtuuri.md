@@ -240,3 +240,26 @@ sequenceDiagram
   Hub_UI->>Home_UI: home_ui.place_ui()
   Home_UI->>Home_UI: load_home_ui()
 ```
+
+### Exchange
+
+"Exchange" painikkeella käyttäjä voi hakea valitsemansa rahasumman Eurosta kohdemaan valuuttaan. Tiedon haku tapahtuu seuraavasti:
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant Hub_UI
+  participant Hub_UI.get_val
+  participant Hub_UI.get_currency
+  participant Hub_Logic
+  participant Format_Currency
+
+  User->>Hub_UI: Set slider value and press "Exchange" button.
+  Hub_UI->>Hub_UI.get_val: get_value()
+  Hub_UI.get_val-->>Hub_UI: value2
+  Hub_UI->>Hub_UI.get_currency: get_currency(value2, country, currency_name, currency_code)
+  Hub_UI->>Hub_Logic: get_currency(value2, country, currency_name, currency_code)
+  Hub_Logic-->>Hub_UI: country, currency_name, amount, exchange_rate, currency_code
+  Hub_UI->>Format_Currency(country, currency_name, amount, exhange_rate)
+
+```
