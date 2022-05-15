@@ -5,13 +5,15 @@ Sovellus tarjoaa katsauksen käyttäjän valitsemaan matkustuskohteeseen. Tämä
 
 [Käyttö-ohje](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
-[vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-[changelog](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
+[Changelog](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
-[arkkitehtuuri](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuuri](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
+[Testausdokumentti](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
 ## Komentorivi
 
