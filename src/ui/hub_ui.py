@@ -44,7 +44,6 @@ class HubUI:
     
     def get_currency(self,amount,country,currency_name,currency_code):
         get_currency_return = self.hub_logic.get_currency(amount,country,currency_name,currency_code)
-        #print(get_currency_return)
         amount = get_currency_return[2]
         ratesum = get_currency_return[3]
         self.format_currency.format_all(country,currency_name,amount,ratesum)
@@ -79,7 +78,6 @@ class HubUI:
         self.news_header_text.place(relx=0,rely=0,relwidth=1,relheight=0.2)
         news_return = self.hub_logic.get_news(city)
         for i in news_return:
-            #print(news_return[i][0]['title'],news_return[i][0]['source'],news_return[i][0]['link'],i)
             self.format_news.form_news(self.news_box,news_return[i][0]['title'],news_return[i][0]['source'],news_return[i][0]['link'],i)
         
         # Currency box ---------------

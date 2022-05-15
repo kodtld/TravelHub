@@ -1,7 +1,7 @@
 from pathlib import Path
 from datetime import datetime
 import requests
-script_location = Path(__file__).absolute().parent
+script_location = Path("src/data_files").absolute()
 cur_code_location = script_location / 'cur_code_by_a2.txt'
 latest_cur_location = script_location / 'latest_cur.txt'
 
@@ -117,7 +117,7 @@ class HubLogic:
         valid_currency_name = self.cur_data[country][1]
         valid_currency_code = self.cur_data[country][2]
         return (valid_country_name,valid_currency_name,valid_currency_code)
-        #self.check_currency(valid_country_name,valid_currency_name,valid_currency_code)
+
 
     def get_attractions(self,lat,lon,city):
         attractions_key = "5ae2e3f221c38a28845f05b6a26705706c72ab688b5936158c2d8685"
