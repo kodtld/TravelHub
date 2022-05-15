@@ -163,7 +163,6 @@ AFN,91.614523
 ALL,120.608353
 ...
 ```
-
 ### cur_code_by_a2.txt
 
 Sisältää maiden virallisen nimen, a2 koodin (kaksinumeroinen maakoodi joka vastaa HomeLogicin palauttamaa maakoodia, ja jonka avulla kyseisen maan valuuttakoodi saadaan), maan valuutan nimen, sekä maan valuuttakoodin formaatissa:
