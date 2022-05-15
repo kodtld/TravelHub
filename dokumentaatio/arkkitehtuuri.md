@@ -225,3 +225,17 @@ sequenceDiagram
 
 ```
 
+### Return
+
+Kun HUB sivulla painetaan "return" painiketta, latautuu etusivu takaisin seuraavasti:
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant Hub_UI
+  participant Home_UI
+
+  User->>Hub_UI: Press "return" button.
+  Hub_UI->>Hub_UI: self.load_back()
+  Hub_UI->>Home_UI: home_ui.place_ui()
+```
