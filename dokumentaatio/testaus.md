@@ -19,3 +19,4 @@ Hub logic luokan kaikille API kutsuille on kirjoitettu testit jotka kokeilevat k
 
 Testien haaraumakattavuus (poislukien UI:sta vastaavat luokat) on 82%, kattavuuden olisi saanut korkeammaksi, jos hub_logic luokan tekstitiedostoihin kirjoittavia funktioita olisi myös testattu.
 
+![](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/coverage.png)
