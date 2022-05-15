@@ -2,7 +2,7 @@
 
 Sovellukselle on kirjoitettu automaattiset testit sekä home_logic-, että hub_logic luokille.
 
-Todellisuudessa home_logic luokan get_geo_code() funktion testaaminen on ainoa suorituksen kannalta merkittävä testi, sillä sen hyväksymällä/palauttamalla arvolla on mahdollista suorittaa loput API kutsut.
+Todellisuudessa home_logic luokan '''get_geo_code()''' funktion testaaminen on ainoa suorituksen kannalta merkittävä testi, sillä sen hyväksymällä/palauttamalla arvolla on mahdollista suorittaa loput API kutsut.
 
 Tästä huolimatta myös hub_logic luokan funktioille on kirjoitettu validin ja epävalidin syötteen testit. 
 
